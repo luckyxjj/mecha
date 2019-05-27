@@ -1,0 +1,328 @@
+.cqq_model > a {
+    color: #b20707 !important;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+#addOrder{
+    width: 100%;
+    height: 30px;
+    /*border: 1px solid gray;*/
+    text-align: center;
+    font-size: 1em;
+    border-radius: 4px;
+    background: #f39d00;
+    color: #ffffff;
+    border: 0;
+    outline: none;
+    margin-left: 1.2%;
+}
+.search_option > div > p {
+    color: white;
+    height: 20px;
+    padding: 15px 0px 10px 0px;
+}
+
+.search_option > div > select {
+    height: 34px;
+    padding: 6px 12px;
+}
+
+.search_option {
+    position: relative;
+    height: 92px;
+    top: -50px;
+    overflow: visible;
+    padding: 0 42px;
+    background-color: #DB0011;
+}
+
+#classify {
+    height: 34px;
+    width: 45%;
+    margin: 0% 3%;
+    background-color: white;
+}
+
+.cqq-wrapper {
+    background: #f5f5f5;
+    min-height: 650px;
+    height: auto;
+    padding: 0 12%;
+}
+
+.search_result {
+    width: 100%;
+    margin-top: -50px;
+    float: left;
+    box-shadow: 0 10px 20px rgba(111, 111, 111, 0.25);
+    padding-bottom: 40px;
+}
+
+.search_result th, .search_result td {
+    text-align: center;
+    width: 117px;
+    padding: 8px 20px;
+}
+
+.pageList > ul > li {
+    padding: 6px 12px;
+    float: left;
+    border: 1px solid #ddd;
+}
+
+.search_result > div {
+    margin-top: 50px;
+    float: right;
+}
+
+.modal-content {
+    position: absolute;
+    z-index: 100;
+    background-color: white;
+    width: 60%;
+    left: 20%;
+    top: 45%;
+}
+
+.modal-title {
+    font-size: 18px;
+}
+
+.close {
+    margin-right: 6px;
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.modal-header {
+    padding: 1% 1%;
+    min-height: 21px;
+}
+
+.col-sm-2 {
+    width: 16%;
+    float: left;
+}
+
+.tableContainer {
+    min-height: 380px;
+}
+
+.search_result > table > tr {
+    vertical-align: top;
+    border-bottom: 1px solid;
+}
+
+.pageList .active {
+    background-color: #DB0011 !important;
+    border-color: #DB0011 !important;
+}
+
+/*计算器*/
+.calculate-inner {
+    /*background: #f5f5f5;*/
+    /*margin: 10px 12px !important;*/
+    /*box-shadow: 0 10px 20px rgba(111, 111, 111, 0.25);*/
+}
+
+.calculate-inner .right {
+    float: right;
+    width: 50%;
+}
+
+.calculate-inner .left {
+    float: left;
+    width: 50%;
+}
+
+.calculate-inner > p {
+    background-size: 100% 100% !important;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    font-size: 1.5rem;
+    margin-bottom: 10px
+}
+
+.otc_price_list, .otc_profit_list {
+    margin-bottom: 5%;
+    background: white;
+    border-radius: 3px;
+    color: inherit;
+    position: relative;
+    right: 0;
+    top: 0;
+    float: right;
+    width: 100%;
+    font-size: 16px;
+}
+
+.otc_price_list tr, .otc_profit_list tr {
+    height: 40px;
+}
+
+.otc_price_list tr td, .otc_profit_list tr td {
+    text-align: center;
+    width: 17%;
+}
+
+.otc_profit_list tr td:nth-child(3){
+    width: 15%;
+    padding-right: 4%;
+    text-align: right;
+}
+
+.otc_profit_list tr td:nth-child(4){
+    width: 25%;
+    padding-right: 5%;
+    text-align: right;
+}
+
+.otc_price_list .table_th, .otc_profit_list .table_th {
+    color: white;
+    height: 40px;
+}
+
+.stock_advice {
+    padding-left: 10px;
+    display: none;
+    position: relative;
+    width: 61%;
+    left: 31.3%;
+    z-index: 1000;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 2px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.calculate_condition {
+    /*text-align: center;*/
+    padding: 14px 5px;
+    /*float: left;*/
+    width: 100%;
+    height: 5%;
+}
+
+.calculate_condition span {
+    /*float: left;*/
+    /*text-align: center;*/
+    display: inline-block;
+    line-height: 32px;
+    width: 30%;
+    font-size: 15px;
+}
+
+.calculate_condition input {
+    width: 55%;
+    padding: 0px 3px;
+    height: 100%;
+    line-height: 100%;
+}
+
+.search_option > div {
+    float: left;
+    width: 25%;
+}
+
+.excute_power_cycle > label {
+    padding: 8px 0px;
+    display: inline-block;
+    color: white;
+    width: 43px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.excute_power_cycle > input {
+    text-align:center;
+    width: 39px;
+}
+
+.excute_power_cycle > select {
+    margin-left: 20px;
+    padding: 9px 0px;
+}
+
+.future_cash > label {
+    padding: 8px 0px;
+    display: inline-block;
+    color: white;
+    width: 43px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.future_cash > input {
+    /*margin-left: 13px;*/
+    padding: 0px 3px;
+    width: 39px;
+    text-align: center;
+}
+
+.transaction_price > input {
+    width: 50px;
+    padding: 0px 5px;
+    text-align: center;
+}
+
+.transaction_price > label {
+    vertical-align: middle;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 8px 0px;
+    margin-right: 5px;
+    width: 40px;
+    display: inline-block;
+    background-color: #dcdcdc;
+    text-align: center;
+    moz-user-select: -moz-none;
+    -moz-user-select: none;
+    -o-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+
+.close_price {
+    padding: 8px 0px;
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    background-color: #d8d8d8;
+}
+
+.transaction_direction > label, .otc_type > label {
+    padding: 5px 37px;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.otc_no_active_background_color {
+    background-color: #d8d8d8;
+}
+
+.otc_up_background_color {
+    background-color: #db1624;
+}
+
+.otc_down_background_color {
+    background-color: green;
+}

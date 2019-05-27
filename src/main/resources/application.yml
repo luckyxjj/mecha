@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: mecha
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate.format_sql: true
+    open-in-view: false
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/db_mecha?autoReconnect=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+server:
+  tomcat:
+    maxParameterCount: 20000

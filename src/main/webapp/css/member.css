@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+}
+.nav-input{
+    width: 100%;
+    height: 50px;
+    background: #E5E5E5;
+}
+.input-frame{
+    width: 94%;
+    height: 36px;
+    margin-left: 10px;
+    margin-top: 7px;
+    border: 1px solid #cac6c6;
+}
+.img{
+    width: 13%;
+    height: 25px;
+    /*border: 1px solid #BFBFBF;*/
+    margin-top: 7px;
+    border-left: 1px solid #bfbfbf;
+    position: absolute;
+    right: 3.5%;
+    top: 1.1%;
+    text-align: center;
+}
+.img-fadajin{
+    width: 17.7px;
+    height: 17.7px;
+}
+.img-left{
+    width: 25%;
+    height: 83px;
+    float: left;
+}
+.img-left>img{
+    width: 100%;
+    height: 100%;
+}
+.center-word{
+    width: 50%;
+    height: 83px;
+    float: left;
+    padding-left: 6px;
+    padding-top: 10px;
+}
+.btn-right{
+    width: 25%;
+    height: 83px;
+    float: left;
+}
+.cont-big{
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    border-bottom: 1px dashed lightgray;
+}
+.span-red{
+    color: #E50F19;
+}
+.distribution{
+    width: 90%;
+    height: 25px;
+    border: 0;
+    outline: none;
+    background: #E50F19;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-left: 6px;
+    margin-top: 25px;
+}
+.top-p{
+    text-align: center;
+    color: #D9D9D9;
+    margin-top: 20px;
+}

@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+}
+.input-btn{
+    width: 40%;
+    height: 45px;
+    border: 1px solid #E50F19;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: #E50F19;
+    border-radius: 4px;
+    margin-left: 6.1%;
+}
+.title-btn{
+    margin-top: 15px;
+}
+.p-top{
+    text-align: center;
+    margin-top: 90px;
+    color: #979797;
+}

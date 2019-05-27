@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+}
+html,.content{
+    background-color: #F1F1F1;
+}
+.service-top{
+    width: 100%;
+    height: 60px;
+    border: 1px solid #FFFFFF;
+    margin-top: 8px;
+    background: #FFFFFF;
+}
+.titlr-span{
+    line-height: 60px;
+    font-size: 1em;
+    letter-spacing:2px;
+}
+.titlr-span span:nth-child(2){
+    float: right;
+    font-size: 20px;
+    letter-spacing:2px;
+}
+.sub{
+    width: 100%;
+    height: 50px;
+    background: #E50F19;
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    border: 0;
+    font-size: 1.3em;
+    color: #FFFFFF;
+}
+
+.swift-btn {
+    width: 50px;
+    height: 25px;
+}
+.swift-btn input[type='checkbox'] {
+    opacity: 0;
+    z-index: 9;
+    outline: none;
+}
+.swift-btn > label{
+    position: absolute;
+    width: 50px;
+    height: 28px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    margin-top: 15px;
+    margin-left: -10px;
+}
+.swift-btn > label:before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    line-height: 25px;
+    text-indent: -1px;
+}
+.swift-btn > label:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 1px;
+    border-radius: 1px;
+    box-shadow:2px 0px 1px #ddd;
+    border-radius: 15px;
+    background-color: #fff;
+    transition: left 0.3s ease;
+    -webkit-transition: left 0.3s ease;
+    -moz-transition: left 0.3s ease;
+}
+.swift-btn input[type='checkbox']:checked + label{
+    border: 1px solid #FF9E21;
+    background-color: #FF9E21;
+}
+.swift-btn input[type='checkbox']:checked + label::before {
+    display: inline-block;
+    color: #fff;
+    text-indent: -25px;
+}
+.swift-btn input[type='checkbox']:checked + label::after {
+    left: 26px;
+    top: 1px;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+}

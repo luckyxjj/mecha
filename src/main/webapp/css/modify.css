@@ -1,0 +1,51 @@
+*{
+    padding: 0;
+}
+.mobileShow {
+    width: 100%;
+    height: 100%;
+    background-color: #F1F1F1;
+}
+.input-width{
+    width: 60%;
+    height: 35px;
+    margin-top: 20px;
+    padding-left: 15px;
+}
+.mobileShow label{
+    width: 23%;
+    margin-left: 28px;
+}
+.sub{
+    width: 100%;
+    height: 50px;
+    background: #E50F19;
+    position: absolute;
+    bottom: 0;
+    outline: none;
+    border: 0;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+.btn-red{
+    width: 30%;
+    height: 35px;
+    border: 1px solid #E50F19;
+    border: 0;
+    outline: none;
+    color: #FFFFFF;
+    background: #E50F19;
+    border-radius: 4px;
+    margin-left: 28px;
+}
+.btn-send{
+    width: 53%;
+    height: 35px;
+    padding-left: 15px;
+}
+.top{
+    margin-top: 20px;
+}
+html,body,.content{
+    height: 100%;
+}

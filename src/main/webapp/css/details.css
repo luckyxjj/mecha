@@ -1,0 +1,41 @@
+*,p,hr{
+    margin: 0;
+    padding: 0;
+}
+.center-btn{
+    width: 100%;
+    height: 55px;
+    /*border: 1px solid #FFFFFF;*/
+    background: #E50F19;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 55px;
+    padding-left: 33px;
+}
+.center-btn a:nth-child(2){
+    float: right;
+    margin-right: 10px;
+}
+
+.p-title{
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px 0 10px 0;
+}
+.p-title1{
+    font-size: 1.1em;
+}
+.p-title1 span:nth-child(1){
+    margin: 0 3% 0 0;
+}
+.p-title1 span:nth-child(2){
+    color: #52ABFB;
+}
+hr{
+    margin: 5px 0 10px 0;
+}
+.p-title2{
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页 - 管理后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/css/ace.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+    <script src="assets/js/ace-extra.min.js"></script>
+    <script type="text/javascript" src="assets/profile.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>" + "<" + "/script>");
+    </script>
+    <script type="text/javascript">
+        if ("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>" + "<" +
+            "/script>");
+    </script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/typeahead-bs2.min.js"></script>
+    <script src="assets/js/ace-elements.min.js"></script>
+    <script src="assets/js/ace.min.js"></script>
+    <style>
+        #myFrameId {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar navbar-default" id="navbar">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('navbar', 'fixed')
+            } catch (e) {}
+        </script>
+        <div class="navbar-container" id="navbar-container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">
+                    <small>
+                        <i class="icon-leaf"></i>
+                        机甲战士后台管理系统
+                    </small>
+                </a>
+            </div>
+            <div class="navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <i class="icon-caret-down"></i>
+                        </a>
+                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <!--<li>
+                                <a href="#">
+                                    <i class="icon-user"></i> 个人信息</a>
+                            </li>-->
+                            <!--<li class="divider"></li>-->
+                            <li>
+                                <a href="#" onclick="logout()">
+                                    <i class="icon-off"></i> 退出</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main-container" id="main-container">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('main-container', 'fixed')
+            } catch (e) {}
+        </script>
+        <div class="main-container-inner">
+            <a class="menu-toggler" id="menu-toggler" href="#">
+                <span class="menu-text"></span>
+            </a>
+            <div class="sidebar" id="sidebar">
+                <script type="text/javascript">
+                    try {
+                        ace.settings.check('sidebar', 'fixed')
+                    } catch (e) {}
+                </script>
+                <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                    <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        <button class="btn btn-success">
+                            <i class="icon-signal"></i>
+                        </button>
+                        <button class="btn btn-info">
+                            <i class="icon-pencil"></i>
+                        </button>
+                        <button class="btn btn-warning">
+                            <i class="icon-group"></i>
+                        </button>
+                        <button class="btn btn-danger">
+                            <i class="icon-cogs"></i>
+                        </button>
+                    </div>
+                    <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                        <span class="btn btn-success"></span>
+                        <span class="btn btn-info"></span>
+                        <span class="btn btn-warning"></span>
+                        <span class="btn btn-danger"></span>
+                    </div>
+                </div>
+<!--                <ul class="nav nav-list" id="_rep"></ul>-->
+                <ul class="nav nav-list">
+                    <li class="active">
+                        <a href="index-bk.html">
+                            <i class="icon-dashboard"></i>
+                            <span class="menu-text">控制台</span>
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-list"></i>
+                            <span class="menu-text">管理员管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+                        <ul class="submenu" style="display: none;">
+                            <li>
+                                <a href="admin.html" target="myFrameName"><i class="icon-double-angle-right"></i>管理员列表</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-list"></i>
+                            <span class="menu-text">基础管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+                        <ul class="submenu" style="display: none;">
+                            <li><a href="banner.html" target="myFrameName"><i class="icon-double-angle-right"></i>banner列表</a></li>
+                            <li><a href="about-bk.html" target="myFrameName"><i class="icon-double-angle-right"></i>关于我们</a></li>
+                            <li><a href="help.html" target="myFrameName"><i class="icon-double-angle-right"></i>帮助列表</a></li>
+                            <li><a href="city.html" target="myFrameName"><i class="icon-double-angle-right"></i>城市列表</a></li>
+                            <li><a href="feedback.html" target="myFrameName"><i class="icon-double-angle-right"></i>反馈列表</a></li>
+                            <li><a href="shop.html" target="myFrameName"><i class="icon-double-angle-right"></i>服务网点列表</a></li>
+                            <li><a href="expressComopany.html" target="myFrameName"><i class="icon-double-angle-right"></i>快递公司列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-list"></i>
+                            <span class="menu-text">常见问题管理</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+                        <ul class="submenu" style="display: none;">
+                            <li><a href="commonProblem.html" target="myFrameName"><i class="icon-double-angle-right"></i>常见问题列表</a></li>
+                            <li><a href="commonProblemClassification.html" target="myFrameName"><i class="icon-double-angle-right"></i>常见问题分类列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="icon-list"></i>
+                            <span class="menu-text">电子版模板配置</span>
+                            <b class="arrow icon-angle-down"></b>
+                        </a>
+                        <ul class="submenu" style="display: none;">
+                            <li><a href="purchaseElectronic.html" target="myFrameName"><i class="icon-double-angle-right"></i>物料采购电子版列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--/ nav nav-list-->
+                <div class="sidebar-collapse" id="sidebar-collapse">
+                    <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+                </div>
+                <script type="text/javascript">
+                    try {
+                        ace.settings.check('sidebar', 'collapsed')
+                    } catch (e) {}
+                </script>
+            </div>
+            <div class="main-content">
+                <div class="breadcrumbs" id="breadcrumbs">
+                    <script type="text/javascript">
+                        try {
+                            ace.settings.check('breadcrumbs', 'fixed')
+                        } catch (e) {}
+                    </script>
+                </div>
+                <iframe id="myFrameId" src="" name="myFrameName" scrolling="yes" frameborder="0"></iframe>
+            </div>
+        </div>
+        <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+            <i class="icon-double-angle-up icon-only bigger-110"></i>
+        </a>
+    </div>
+</body>
+<script>
+    $(window).ready(function () {
+        function IframeHeight() {
+            var obj = $("#myFrameId")[0]; //取得父页面IFrame对象
+            IframeTime = setInterval(function () {
+                obj.height = $(obj.contentDocument).height(); //调整父页面中IFrame的高度为此页面的高度
+            }, 200);
+        } //添加定时器是页面高度会动态发生改变
+        //IframeHeight();
+    })
+    $(document).ready(function(){
+        $('#myFrameId').css('height',($(window).height() - 95) +'px');
+    });
+
+</script>
+</html>

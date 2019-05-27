@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 1200px){
+    header .sNav{
+        visibility: hidden;
+    }
+    header{
+        position: relative;
+    }
+    header .phone{
+        top: 25px;
+        right: 2.5%;
+    }
+    header .phone p{
+        width: 25px;
+        height: 3px;
+        margin-bottom: 3px;
+        background-color: black;
+    }
+    header.other .phone p{
+        background-color: white;
+    }
+    header nav{
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 1;
+    }
+    header.other nav{
+        background-color: black;
+    }
+    header nav > div{
+        display: block!important;
+        line-height: 30px;
+        text-align: center;
+    }
+    header nav > div + div{
+        margin-left: 0;
+    }
+    header nav > div:after{
+        top: calc(100% - 8px);
+    }
+    header .lwg{
+        margin-left: 0;
+        margin-right: 50px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    footer .content{
+        padding: 0;
+    }
+    footer{
+        padding: 30px 0;
+    }
+}
+
+@media screen and (max-width: 700px){
+    footer .content > div{
+        width: 50%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    footer .content > div:nth-of-type(3){
+        display: none;
+    }
+}

@@ -1,0 +1,121 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Microsoft YaHei;
+	
+}
+ul{
+	padding: 0;
+	margin: 0;
+}
+
+.center-btn {
+	width: 100%;
+	height: 50px;
+	border: 1px solid #FFFFFF;
+	background: #E50F19;
+}
+
+.a-btn {
+	width: 165px;
+	height: 35px;
+	text-align: center;
+	/*background: #E50F19;*/
+	line-height: 35px;
+	margin: 0 auto;
+	margin-top: 5px;
+	font-size: 1.3em;
+	border: 0;
+	outline: none;
+}
+
+.a-btn>a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.name-ul {
+	width: 100%;
+	/*border: 1px solid gray;*/
+	height: 45px;
+	/*margin-left: 10%;*/
+	border-bottom: 1px solid #bbb;
+}
+
+.name-li {
+	/*width: 45%;*/
+	height: 45px;
+	/*border: 1px solid gray;*/
+	float: left;
+	list-style: none;
+	line-height: 35px;
+	font-size: 1.2em;
+	margin: 0;
+	margin-left: 3%;
+}
+.name-li  input{
+	padding: 5px;
+}
+.loginbox ul {
+	margin: 5px 0;
+}
+
+.loginbox li {
+	overflow: hidden;
+}
+
+.loginbox li div img {
+	vertical-align: top;
+}
+
+.loginbox li div img.delete {
+	display: none;
+	position: absolute;
+	right: 10%;
+	top: 0;
+	width: 30px;
+}
+
+.btn-foot {
+	width: 100%;
+	height: 60px;
+	/*border: 1px solid gray;*/
+	margin-top: 35px;
+}
+
+.input-btn {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #E4391F;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: #E4391F;
+    border-radius: 4px;
+    
+}
+
+#imageBox1{
+	position: relative;
+	margin-top: 15px;
+}
+#imageBox2{
+	position: relative;
+}
+
+.preview{
+	width: 80%;
+    margin: 0px 10%;
+    min-width: 80%;
+    min-height: 120px;
+    border: 1px solid #f1f1f1;
+}
+.addImg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}

@@ -1,0 +1,358 @@
+<!doctype html><!--文档头信息——默认html文档-->
+<html lang="en"><!--根标签 en表英语 -->
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8"><!-- 字符编码 -->
+    <meta name="Generator" content="EditPlus®"><!-- 使用编辑器 不重要 可以不写 -->
+    <meta name="Author" content="XX"><!-- 作者 可以不写-->
+    <meta name="Keywords" content=""><!-- 关键字 -->
+    <meta name="Description" content=""><!-- 描述 对网页做一个描述，介绍网页-->
+    <title>Document</title><!-- 标题 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meida-common.css">
+    <link rel="stylesheet" href="css/media-style.css">
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <!--header start-->
+        <header class="">
+            <div class="content clearfix">
+                <h1 class="fl">
+                    <a href="">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </h1>
+                <div class="right fr clearfix">
+                    <nav class="fl">
+                        <div class="d-ib ">
+                            <a href="index.html">首页</a>
+                        </div>
+                        <div class="d-ib ">
+                            <a href="about.html">关于我们</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="career.html">事业内容架构</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="buy.html">买机甲</a>
+                        </div>
+                        <div class="d-ib on">
+                            <a href="sell.html">卖机甲</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="sc.html">商城入口</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="recruiting.html">创客达人招募</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="service.html">服务保障</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="help.html">咨询服务</a>
+                        </div>
+                    </nav>
+                    <div class="lwg fl">
+                        <a href="">中文</a>
+                        丨
+                        <a href="">EN</a>
+                    </div>
+                    <div class="phone p-a">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="sNav p-a">
+                <a href="">机甲设备发布</a>
+                <a href="">卖机甲流程</a>
+                <a href="">卖机甲保障</a>
+            </div>
+        </header>
+        <!--header end-->
+        <!--banner start-->
+        <div class="banner p-r">
+            <img src="img/banner7.png" alt="">
+        </div>
+        <!--banner end-->
+        <!--sell start-->
+        <div class="sell" id="message">
+            <div class="content">
+                <form action="">
+                    <div class="form">
+                        <h4><a class="p-r">机甲设备发布</a></h4>
+                        <div class="up">
+                            <div class="d-ib">选择分类</div>
+                            <select name="categoryName">
+                                <option value="" v-for="category in categoryList">{{category.name}}</option>
+                            </select>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib">选择品牌</div>
+                            <select name="brandName">
+                                <option value="" v-for="brand in brandList">{{brand.name}}</option>
+                            </select>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib">设备型号</div>
+                            <div class="input d-ib p-r">
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib">停放地点</div>
+                            <select name="" id="" @change="changeProvince">
+<!--                                <option value="" >请选择使用省份</option>-->
+                                <option value="" v-for="address in addressList">{{address.name}}</option>
+
+                            </select>
+                            <select name="" id="">
+<!--                                <option value="">请选择使用城市</option>-->
+                                <option value="" v-for="city in chooseAddress.city">{{city.name}}</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">请选择使用县</option>
+                            </select>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib">期望价格</div>
+                            <div class="input d-ib p-r">
+                                <input type="text" placeholder="请输入出售价格">
+                            </div>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib">出厂年限</div>
+                            <div class="input d-ib p-r">
+                                <input type="date" placeholder="请输入出售价格">
+                            </div>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib">车辆照片</div>
+                            <input type="file" multiple>
+                            <div class="upImg">
+                                <img src="img/e.png" alt="">
+                                <p>请上传jpg、png格式照片，最少5张最多20张</p>
+                            </div>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib mt">使用经历</div>
+                            <textarea name="" id="" cols="" rows="" placeholder="请写一下车况感受。"></textarea>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib"><span>*</span>联系人</div>
+                            <div class="input d-ib p-r">
+                                <input type="text" placeholder="">
+                                <div class="p-a">
+                                    <span class="on">先生</span>
+                                    丨
+                                    <span class="">女士</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib"><span>*</span>手机号</div>
+                            <div class="input d-ib">
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib"><span>*</span>邮箱号</div>
+                            <div class="input d-ib">
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib"><span>*</span>Wechat</div>
+                            <div class="input d-ib">
+                                <input type="text" placeholder="">
+                            </div>
+                        </div>
+                        <div class="up">
+                            <div class="d-ib"></div>
+                            <a href="">立即发布</a>
+                        </div>
+                    </div>
+                </form>
+                <div class="sellProgress clearfix">
+                    <h4 class="s-title">卖机甲流程</h4>
+                    <div class="fl">
+                        <img src="img/s1.png" alt="">
+                        <p>提交信息</p>
+                    </div>
+                    <div class="fl">
+                        <img src="img/s2.png" alt="">
+                        <p>平台估价</p>
+                    </div>
+                    <div class="fl">
+                        <img src="img/s3.png" alt="">
+                        <p>与您联系</p>
+                    </div>
+                    <div class="fl">
+                        <img src="img/s4.png" alt="">
+                        <p>撮合成交</p>
+                    </div>
+                </div>
+                <div class="potential">
+                    <h4 class="s-title">卖机甲保障</h4>
+                    <img src="img/potential.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!--sell end-->
+        <!--footer start-->
+        <footer>
+            <div class="content">
+                <div class="d-ib">
+                    <h3>
+                        <a href="">服务内容架构</a>
+                    </h3>
+                    <div>
+                        <a href="">机甲云智能实验室</a>
+                        <a href="">机甲链SIOT服务平台</a>
+                        <a href="">新车新部品新零售</a>
+                        <a href="">金融生态服务</a>
+                        <a href="">机甲商事</a>
+                    </div>
+                </div>
+                <div class="d-ib">
+                    <h3>
+                        <a href="">买机甲</a>
+                    </h3>
+                    <div>
+                        <a href="">车源需求发布</a>
+                        <a href="">买机甲流程</a>
+                        <a href="">买机甲保障</a>
+                    </div>
+                </div>
+                <div class="d-ib">
+                    <a href="">
+                        <img src="img/logo2.png" alt="">
+                    </a>
+                </div>
+                <div class="d-ib">
+                    <h3>
+                        <a href="">卖机甲</a>
+                    </h3>
+                    <div>
+                        <a href="">机甲车源发布</a>
+                        <a href="">卖机甲流程</a>
+                        <a href="">机甲出售保障</a>
+                    </div>
+                </div>
+                <div class="d-ib">
+                    <h3>
+                        <a href="">创客达人招募</a>
+                    </h3>
+                    <div>
+                        <a href="">创客赚钱方式</a>
+                        <a href="">创客平台介绍</a>
+                        <a href="">创客达人优势</a>
+                        <a href="">如何成为创客达人</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer end-->
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/hdNav.js"></script>
+    <script>
+        $(".sell .content .form .up ").each(function (index,item) {
+            $(item).find(".input div span").click(function () {
+                $(this).addClass("on").siblings().removeClass("on")
+            })
+        })
+
+
+        var message = new Vue({
+            el: '#message',
+            data: {
+                categoryList: [],
+                brandList: [],
+                addressList:'',
+                chooseAddress:[],
+                baseUrl: 'http://www.delmei.com.cn/source/',
+                language: 0
+            },
+            created: function () {
+                var that = this;
+                var te = localStorage.getItem("dem_language");
+                that.language = (localStorage.getItem("dem_language")==null||localStorage.getItem("dem_language")==0)?0:1;
+                //获取分类
+                $.get("category/getAll",
+                    {
+
+                    },
+                    function (res) {
+                        if (res.code == 0) {
+                            that.categoryList = res.data;
+                        } else {
+                            //错误提示
+                            alert(res.msg);
+                        }
+                    });
+                //获取品牌
+                $.get("brand/getAll",
+                    {
+
+                    },
+                    function (res) {
+                        if (res.code == 0) {
+                            that.brandList = res.data;
+                        } else {
+                            //错误提示
+                            alert(res.msg);
+                        }
+                    });
+                //获取多语言信息
+                $.get("config/address.json",
+                    {},
+                    function (res) {
+                        that.addressList = res;
+                        that.chooseAddress = res[0];
+                    })
+
+            },
+            methods: {
+                login: function () {
+                    var that = this
+                    var password = $("#password").val()
+                    if (password == "") {
+                        $("#tip").show();
+                        $("#tip").text(that.language==1?that.parameterInfo.us.passTip:that.parameterInfo.cn.passTip);
+                    } else {
+                        $.post("user/login", {
+                                password: password
+                            },
+                            function (res) {
+                                if (res.code == 0) {
+                                    /* 清除密码 */
+                                    $("#password").val("");
+                                    $("#tip").hide();
+                                    sessionStorage.setItem("user", res.data);
+                                    window.location.href = 'product-center-new.html'
+                                } else {
+                                    $("#tip").show();
+                                    if (res.msg=="密码错误"&&that.language==1){//密码错误 英文
+                                        $("#tip").text(that.parameterInfo.us.passError);
+                                    }else {
+                                        //密码错误 中文
+                                        $("#tip").text(that.parameterInfo.cn.passError);
+                                    }
+
+                                }
+
+                            });
+                    }
+
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

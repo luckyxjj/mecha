@@ -1,0 +1,139 @@
+*,p{
+    margin: 0;
+    padding: 0;
+}
+
+.k-li{
+    width: 25%;
+    height: 30px;
+    /*border: 1px solid #bbb;*/
+    float: left;
+    list-style: none;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.3em;
+    color: #E50F1B;
+}
+.emm{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    left: 15%;
+    top: 90%;
+    border-width: 1px 0px 0px 1px;
+    transform: rotateZ(65deg) skew(35deg);
+    background: #E50F1B;
+}
+.emm1{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    left: 38%;
+    top: 90%;
+    border-width: 1px 0px 0px 1px;
+    transform: rotateZ(65deg) skew(35deg);
+    background: #E50F1B;
+}
+.emm2{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    left: 61%;
+    top: 90%;
+    border-width: 1px 0px 0px 1px;
+    transform: rotateZ(65deg) skew(35deg);
+    background: #E50F1B;
+}
+.emm3{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    left: 83%;
+    top: 90%;
+    border-width: 1px 0px 0px 1px;
+    transform: rotateZ(65deg) skew(35deg);
+    background: #E50F1B;
+}
+.k-li>p{
+    width: 70%;
+    height: 30px;
+    /*border: 1px solid #bbb;*/
+    margin: 0 auto;
+    border-radius: 4px;
+}
+.img-show-center{
+    width: 100%;
+    height: 210px;
+    margin-top: 8px;
+}
+.num-li{
+    width: 32%;
+    height: 35px;
+    /*border: 1px solid #bbb;*/
+    float: left;
+    list-style: none;
+    /* text-align: left; */
+    font-size: 1em;
+    line-height: 35px;
+    /*margin-left: 8px;*/
+}
+.num-li-right{
+	width: 32%;
+	height: 35px;
+	float: left;
+    list-style: none;
+    line-height: 35px;
+    color: #4CDA64;
+	
+}
+.col-ul li:nth-child(2){
+    width: 36%;
+}
+/*.num-li-right{*/
+    /*height: 35px;*/
+    /*float:right;*/
+    /*list-style: none;*/
+    /*font-size: 1.2em;*/
+    /*line-height: 36px;*/
+    /*margin-right: 8px;*/
+/*}*/
+.input-width{
+    width: 49.3%;
+    height: 35px;
+    border: 0;
+    border-radius: 4px;
+    outline: none;
+    color: #FFFFFF;
+    font-size: 1.3em;
+    background: #E50F19;
+}
+.input-color input:nth-child(2){
+    background: #4CDA64;
+}
+.k-li p:hover{
+    background: #E50F19;
+    color: #FFFFFF;
+}
+.col-ul{
+    margin:10px 0;
+    border: 4px solid #f2888c;
+    height:40px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.center-btn{
+    width: 100%;
+    height: 55px;
+    /*border: 1px solid #FFFFFF;*/
+    background: #E50F19;
+    font-size: 1.5em;
+    text-align: center;
+    line-height: 55px;
+    padding-left: 33px;
+}
+.center-btn a:nth-child(2){
+    float: right;
+    margin-right: 10px;
+}
+

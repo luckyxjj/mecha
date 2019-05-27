@@ -1,0 +1,22 @@
+*,p,hr{
+    margin: 0;
+    padding: 0;
+}
+.p-title{
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 10px 0 10px 0;
+}
+.p-title1{
+    font-size: 1.1em;
+}
+.p-title1 span:nth-child(1){
+    margin: 0 3% 0 0;
+}
+hr{
+    margin: 5px 0 10px 0;
+}
+.p-title2{
+    letter-spacing: 2px;
+    font-size: 15px;
+}

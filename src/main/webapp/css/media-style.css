@@ -1,0 +1,426 @@
+@charset "UTF-8";
+
+.contact > div span{
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1600px){
+    .index ul li:nth-of-type(3n+1){
+        width: 250px;
+    }
+    .index ul li h3{
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        font-size: 25px;
+    }
+    .index ul li {
+        width: 240px;
+        margin-left: 130px;
+        margin-bottom: 30px;
+    }
+    .next {
+        padding-top: 80px;
+    }
+    footer.part {
+        padding-top: 260px;
+    }
+
+}
+
+@media screen and (max-width: 1500px){
+    .index ul{
+        padding-right: 300px;
+    }
+    .index ul li,
+    .index ul li:nth-of-type(3n+1){
+        width: 25.5%;
+        margin-left: 1.5% !important;
+        margin-bottom: 20px;
+    }
+    .index ul li:nth-of-type(1){
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .index ul{
+        padding-right: 0px;
+    }
+    .index ul li,
+    .index ul li:nth-of-type(3n+1){
+        width: 22.5%;
+        margin-left: 1.5% !important;
+    }
+    .index ul li:nth-of-type(1){
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1450px){
+    .contact > div{
+        vertical-align: top;
+        white-space: normal;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 1350px){
+    .next .indexImg img{
+        width: 310px;
+    }
+    footer.part{
+        padding-top: 180px;
+    }
+    .about .content > div h3{
+        margin-left: 0;
+    }
+    .about .content > div{
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 1250px){
+    .content{
+        width: 95%;
+    }
+    .buyGrogress .runList > div:before{
+        width: 90px;
+    }
+    .career .right{
+        width: 68%;
+        margin-right: 0;
+    }
+    .progress{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .join ul li div{
+        width: calc(100% - 130px);
+        font-size: 20px;
+    }
+}
+
+
+
+@media screen and (max-width: 1000px){
+    .pagers{
+        display: none;
+    }
+    .index ul{
+        margin-bottom: 30px;
+        padding-left:0;
+    }
+    .index ul li,
+    .index ul li:nth-of-type(3n+1){
+        width: 49%;
+        margin-left: 2% !important;
+    }
+    .index ul li:nth-of-type(2n+1){
+        margin-left: 0 !important;
+    }
+    .next{
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+    .next .indexImg img{
+        width: 100%;
+    }
+    .about{
+        margin-top: 280px;
+        margin-bottom: -180px;
+    }
+    .about .content > div h3{
+        margin-bottom: 40px;
+    }
+    .about img{
+        width: 100%;
+    }
+    .buyGrogress .runList > div:before{
+        width: 60%;
+    }
+    .buyGrogress .runList{
+        font-size: 0;
+    }
+    .buyGrogress .runList > div{
+        display: inline-block;
+        float: none;
+        width: 50%;
+        margin-bottom: 15px;
+        vertical-align: top;
+    }
+    .career .right{
+        width: 100%;
+    }
+    .career .left{
+        display: none;
+    }
+    .contact > div{
+        width: 100%;
+        line-height: 45px;
+    }
+    .progress div{
+        width: 50%;
+    }
+    .progress div:nth-of-type(4):before{
+        display: none;
+    }
+    .join ul li{
+        padding-left: 30px;
+    }
+    .sell .content .form{
+        width: 100%;
+    }
+    .sell .content .form .up select{
+        margin-bottom: 10px;
+    }
+    .sell .content .form .up select + select{
+        display: block;
+        margin-left: 167px;
+    }
+    .sell .content .form .up textarea{
+        width: calc(100% - 167px);
+    }
+    .sell .sellProgress{
+        margin: 50px 0;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .buy .callus > div{
+        width: 95%;
+    }
+    .buy .callus > div > div input{
+        width: calc(100% - 180px);
+    }
+    .buy .callus > div > div{
+        font-size: 16px;
+    }
+    .recruiting .four{
+        width: 400px;
+        margin:50px auto;
+    }
+    .recruiting .four div{
+        margin-bottom: 15px;
+    }
+    .recruiting .four div:nth-of-type(3){
+        margin-left: 0;
+    }
+    .recruiting .four div:nth-of-type(3):before{
+        display: none;
+    }
+    .recruiting p.org{
+        width: 100%;
+        margin:30px auto 0;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .index{
+        padding-top: 30px;
+    }
+    .i-title{
+        padding-top: 30px;
+    }
+    .i-title h3{
+        font-size: 24px;
+    }
+    .index ul li h3{
+        font-size: 18px;
+    }
+    .index ul li, .index ul li:nth-of-type(3n+1){
+        width: 100%;
+    }
+    footer.part{
+        padding: 50px 0;
+    }
+    .about .content > div h3{
+        font-size: 20px;
+    }
+    .about .content > div p{
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .about .content > div + div{
+        margin-top: 30px;
+    }
+    .about .content > div h4,
+    .about .content > div h4.sm{
+        font-size: 18px;
+    }
+    .about .content > div h4.bm{
+        margin-bottom: 30px;
+    }
+    .about .content{
+        padding-bottom: 30px;
+    }
+    .about .content > div p.tc{
+        margin-top: 30px;
+    }
+    .buy .callus > div > div a{
+        width: 110px;
+    }
+    .buy .callus > div > div input{
+        width: calc(100% - 110px);
+    }
+    .buyGrogress{
+        padding: 30px 0;
+    }
+    .buyGrogress .runList > div:before{
+        width: 50%;
+        right: 30px;
+    }
+    .buyGrogress .runList{
+        margin-top: 30px;
+    }
+    .c-title{
+        font-size: 20px;
+    }
+    .career{
+        margin-top: 50px;
+        padding-bottom: 30px;
+    }
+    .career .right > div h2{
+        margin-bottom: 15px;
+        font-size: 20px;
+    }
+    .career .right > div div{
+        margin-top: 15px;
+        padding-bottom: 10px;
+    }
+    .career .right > div + div{
+        margin-top: 30px;
+    }
+    .service{
+        padding: 30px 0;
+    }
+    .service .hd{
+        margin-bottom: 10px;
+    }
+    .service .hd > div{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .service .hd p{
+        width: calc(100% - 60px);
+        font-size: 16px;
+    }
+    .help .construction{
+        padding-top: 30px;
+    }
+    .contact > div{
+        font-size: 14px;
+    }
+    .buy .Img img{
+        display: block;
+        margin: auto;
+    }
+    .buy .Img{
+        margin-top: 30px;
+    }
+    .buy .Img img + img{
+        margin:20px auto 0;
+    }
+    .title h2{
+        font-size: 20px;
+    }
+    .progress{
+        padding: 30px 0;
+    }
+    .progress .title{
+        margin-bottom: 30px;
+    }
+    .color{
+        padding: 30px 0;
+    }
+    .title p{
+        font-size: 18px;
+    }
+    .join ul li{
+        width: 100%;
+        margin-bottom: 15px;
+        padding-left: 10px;
+    }
+    .join ul li div{
+        width: calc(100% - 110px);
+        margin-left: 10px;
+        font-size: 18px;
+    }
+    .colors{
+        padding: 30px 0;
+    }
+    .colors .title{
+        margin-bottom: 20px;
+    }
+    .colors img{
+        margin-top: 15px;
+    }
+    .colors .in{
+        margin-top: 30px;
+        font-size: 20px;
+    }
+    .sell .content .form .up{
+        margin-top: 15px;
+    }
+    .s-title{
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+    .sell{
+        margin-top: 50px;
+        padding-bottom: 40px;
+    }
+    .sell .sellProgress > div{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    .sell .sellProgress > div:nth-of-type(3):after{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .buyGrogress .runList > div{
+        width: 100%;
+    }
+    .progress div{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .progress div img{
+        margin-bottom: 5px;
+    }
+    .progress div:nth-of-type(2) ~ div:before{
+        display: none;
+    }
+    .recruiting .four{
+        width: 300px;
+        margin:30px auto;
+    }
+    .recruiting .four div + div{
+        margin-left: 30px;
+    }
+    .recruiting .four div + div:before{
+        left: -23px;
+    }
+    .sell .content .form .up > div{
+        width: 80px;
+        margin-right: 15px;
+    }
+    .sell .content .form .up select,
+    .sell .content .form .up .input,
+    .sell .content .form .up input[type=file],
+    .sell .content .form .up textarea{
+        width: calc(100% - 100px);
+    }
+    .sell .content .form .up select + select,
+    .sell .content .form .up .upImg{
+        margin-left:95px;
+    }
+    .sell .content .form .up a{
+        width: 100%;
+    }
+}
+
+

@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+}
+.middle-center{
+    text-align: center;
+}
+.nav-h4{
+    color: #FFB351;
+    margin-top: 60px;
+}
+.code-img{
+    width: 80%;
+    margin-top: 20px;
+}
+.code-btn{
+    width: 50%;
+    height: 45px;
+    border: 0;
+    outline: none;
+    background: #FFB351;
+    color: #FFFFFF;
+    margin-top: 60px;
+    border-radius: 4px;
+}

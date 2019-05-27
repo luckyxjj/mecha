@@ -1,0 +1,30 @@
+/*弹框*/
+.talk,.talk1{
+    width: 50%;
+    height: 120px;
+    /*border: 1px solid gray;*/
+    position: fixed;
+    top: 45%;
+    left: 25%;
+    text-align: center;
+    padding-top: 30px;
+    background:#FFFFFF;
+    display: none;
+}
+.p-img p{
+    font-size: 18px;
+    color: #E50F19;
+}
+.p-img img{
+    width: 13%;
+}
+.mask{
+    width: 100%;
+    height: 100%;
+    /*border: 1px solid gray;*/
+    display: none;
+    background: #A8A8A8;
+    position: absolute;
+    top: 0;
+    opacity: 0.5;
+}

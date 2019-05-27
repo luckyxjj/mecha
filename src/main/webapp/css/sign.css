@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+}
+.cont-center{
+    text-align: center;
+}
+.input-btn{
+    width: 50%;
+    height: 45px;
+    border: 1px solid #E4391F;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: #E4391F;
+    border-radius: 4px;
+    margin-top: 90px;
+}
+.code-btn{
+    width: 50%;
+    height: 45px;
+    border: 0;
+    outline: none;
+    background: #FFB351;
+    color: #FFFFFF;
+    margin-top: 60px;
+    border-radius: 4px;
+}
+.input-box-phone{
+    width: 90%;
+    height: 30px;
+    margin-top: 15px;
+    border-radius: 4px;
+    background: #F3F3F5;
+    border: 0;
+    padding-left: 20px;
+}
+.input-box{
+    margin-top: 35px;
+}
+.problem{
+    float: right;
+    margin-right: 16px;
+    margin-top: 8px;
+    font-size: 16px;
+}
+.problem>a{
+    text-decoration: none;
+    color: #FFB351;
+}
+.input-btn-foot{
+    width: 50%;
+    height: 45px;
+    border: 1px solid #E4391F;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: #E4391F;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.foot-btn{
+    margin-top: 90px;
+}
