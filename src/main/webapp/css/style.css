@@ -789,6 +789,18 @@
     line-height: 60px;
     border-radius: 5px;
 }
+.sell .content .form .up .submit-sell{
+    display: inline-block;
+    width: 387px;
+    height: 60px;
+    background-color: #f75518;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .sell .sellProgress{
     margin-top: 205px;
     margin-bottom: 90px;
