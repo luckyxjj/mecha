@@ -1,7 +1,8 @@
 <!doctype html><!--文档头信息——默认html文档-->
 <html lang="en"><!--根标签 en表英语 -->
 <head>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8"><!-- 字符编码 -->
     <meta name="Generator" content="EditPlus®"><!-- 使用编辑器 不重要 可以不写 -->
     <meta name="Author" content="XX"><!-- 作者 可以不写-->
@@ -14,317 +15,351 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/meida-common.css">
     <link rel="stylesheet" href="css/media-style.css">
+    <script src="js/vue.js"></script>
 </head>
 <style>
-    body,html{
-        height:100%;
+    body, html {
+        height: 100%;
     }
-    body{
+
+    body {
         overflow: hidden;
     }
-    #wrap{
+
+    #wrap {
         width: 100%;
         height: 100%;
     }
-    #wrap .part{
-        width:100%;
-        height:100%;
-        position:relative;
+
+    #wrap .part {
+        width: 100%;
+        height: 100%;
+        position: relative;
         overflow: hidden;
         box-sizing: border-box;
     }
-    header{
+
+    header {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         z-index: 2;
     }
-    @media screen and (max-width: 1000px){
-        body{
+
+    @media screen and (max-width: 1000px) {
+        body {
             overflow: auto;
         }
-        #wrap .part{
+
+        #wrap .part {
             height: auto;
         }
-        .shuffling{
-            height: 700px!important;
+
+        .shuffling {
+            height: 700px !important;
         }
     }
 
-    @media screen and (max-width: 600px){
-        .shuffling{
-            height: 500px!important;
+    @media screen and (max-width: 600px) {
+        .shuffling {
+            height: 500px !important;
         }
-        .shuffling .swiper-slide{
-            background: url(img/banner6.png) center center / 240% 100% no-repeat!important;
+
+        .shuffling .swiper-slide {
+            background: url(img/banner6.png) center center / 240% 100% no-repeat !important;
         }
     }
 </style>
 <body>
-    <div id="wrap">
-        <!--header start-->
-        <header class="">
-            <div class="content clearfix">
-                <h1 class="fl">
-                    <a href="">
-                        <img src="img/logo.png" alt="">
-                    </a>
-                </h1>
-                <div class="right fr clearfix">
-                    <nav class="fl">
-                        <div class="d-ib on">
-                            <a href="index.html">首页</a>
-                        </div>
-                        <div class="d-ib">
-                            <a href="about.html">关于我们</a>
-                        </div>
-                        <div class="d-ib">
-                            <a href="career.html">事业内容架构</a>
-                        </div>
-                        <div class="d-ib">
-                            <a href="buy.html">买机甲</a>
-                        </div>
-                        <div class="d-ib">
-                            <a href="sell.html">卖机甲</a>
-                        </div>
-                        <div class="d-ib">
-                            <a href="sc.html">商城入口</a>
-                        </div>
-                        <div class="d-ib">
-                            <a href="recruiting.html">创客达人招募</a>
-                        </div>
-                        <div class="d-ib">
-                            <a href="service.html">服务保障</a>
-                        </div>
-                        <div class="d-ib">
-                            <a href="help.html">咨询服务</a>
-                        </div>
-                    </nav>
-                    <div class="lwg fl">
-                        <a href="">中文</a>
-                        丨
-                        <a href="">EN</a>
+<div id="wrap">
+    <!--header start-->
+    <header class="">
+        <div class="content clearfix">
+            <h1 class="fl">
+                <a href="">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </h1>
+            <div class="right fr clearfix">
+                <nav class="fl">
+                    <div class="d-ib on">
+                        <a href="index.html">首页</a>
                     </div>
-                </div>
-                <div class="phone p-a">
-                    <p></p>
-                    <p></p>
-                    <p></p>
+                    <div class="d-ib">
+                        <a href="about.html">关于我们</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="career.html">事业内容架构</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="buy.html">买机甲</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="sell.html">卖机甲</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="sc.html">商城入口</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="recruiting.html">创客达人招募</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="service.html">服务保障</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="help.html">咨询服务</a>
+                    </div>
+                </nav>
+                <div class="lwg fl">
+                    <a href="">中文</a>
+                    丨
+                    <a href="">EN</a>
                 </div>
             </div>
-            <div class="sNav p-a">
-                <a href="">机甲设备发布</a>
-                <a href="">卖机甲流程</a>
-                <a href="">卖机甲保障</a>
-            </div>
-        </header>
-        <!--header end-->
-        <!--shuffling start-->
-        <div class="shuffling part">
-            <div class=" swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background: url(img/banner6.png) no-repeat center/cover ;"></div>
-                </div>
-                <!--<div class="swiper-pagination"></div>-->
+            <div class="phone p-a">
+                <p></p>
+                <p></p>
+                <p></p>
             </div>
         </div>
-        <!--shuffling end-->
-        <!--index start-->
-        <div class="index part">
-            <div class="content">
-                <div class="i-title mb">
-                    <h3>关联品类</h3>
-                    <p>连接您和机甲的故事</p>
-                </div>
-                <ul>
-                    <li class="d-ib">
-                        <h3>建设机械</h3>
-                        <img src="img/i1.png" alt="">
-                    </li>
-                    <li class="d-ib">
-                        <h3>农业机械 </h3>
-                        <img src="img/i2.png" alt="">
-                    </li>
-                    <li class="d-ib">
-                        <h3>物料搬运</h3>
-                        <img src="img/i3.png" alt="">
-                    </li>
-                    <li class="d-ib">
-                        <h3>新能源新材料</h3>
-                        <img src="img/i4.png" alt="">
-                    </li>
-                </ul>
-
-            </div>
+        <div class="sNav p-a">
+            <a href="">机甲设备发布</a>
+            <a href="">卖机甲流程</a>
+            <a href="">卖机甲保障</a>
         </div>
-        <!--index end-->
-        <!--next start-->
-        <div class="next part">
-            <div class="content">
-                <div class="i-title">
-                    <h3>合作伙伴</h3>
-                    <p>平等尊重，建立动态平衡和谐的良性关系，</p>
-                    <p>携手共建产业新零售生态圈</p>
-                </div>
-                <div class="indexImg">
-                    <img src="img/index.png" alt="">
-                </div>
+    </header>
+    <!--header end-->
+    <!--shuffling start-->
+    <div class="shuffling part" id="message">
+        <div class=" swiper-container">
+            <div class="swiper-wrapper">
+                <!--                    <div class="swiper-slide" :style="background: url(banner.urlCn) no-repeat center/cover ;"></div>-->
+                <img :src="baseUrl+banner.urlCn">
             </div>
+            <!--<div class="swiper-pagination"></div>-->
         </div>
-        <!--next end-->
-        <!--footer start-->
-        <footer class="part">
-            <div class="content">
-                <div class="d-ib">
-                    <h3>
-                        <a href="">服务内容架构</a>
-                    </h3>
-                    <div>
-                        <a href="">机甲云智能实验室</a>
-                        <a href="">机甲链SIOT服务平台</a>
-                        <a href="">新车新部品新零售</a>
-                        <a href="">金融生态服务</a>
-                        <a href="">机甲商事</a>
-                    </div>
-                </div>
-                <div class="d-ib">
-                    <h3>
-                        <a href="">买机甲</a>
-                    </h3>
-                    <div>
-                        <a href="">车源需求发布</a>
-                        <a href="">买机甲流程</a>
-                        <a href="">买机甲保障</a>
-                    </div>
-                </div>
-                <div class="d-ib">
-                    <a href="">
-                        <img src="img/logo2.png" alt="">
-                    </a>
-                </div>
-                <div class="d-ib">
-                    <h3>
-                        <a href="">卖机甲</a>
-                    </h3>
-                    <div>
-                        <a href="">机甲车源发布</a>
-                        <a href="">卖机甲流程</a>
-                        <a href="">机甲出售保障</a>
-                        
-                    </div>
-                </div>
-                <div class="d-ib">
-                    <h3>
-                        <a href="">创客达人招募</a>
-                    </h3>
-                    <div>
-                        <a href="">创客赚钱方式</a>
-                        <a href="">创客平台介绍</a>
-						<a href="">创客达人优势</a>
-						<a href="">如何成为创客达人</a>
-						
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!--footer end-->
-        <!--pagers start -->
-        <div class="pagers">
-            <div class="on">01</div>
-            <div>02</div>
-            <div>03</div>
-            <div>04</div>
-        </div>
-        <!--pagers end-->
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/swiper-4.3.5.min.js"></script>
-    <script src="js/jquery.mousewheel.js"></script>
-    <script src="js/hdNav.js"></script>
-    <script>
-        $("header").addClass("other");
+    <!--shuffling end-->
+    <!--index start-->
+    <div class="index part">
+        <div class="content">
+            <div class="i-title mb">
+                <h3>关联品类</h3>
+                <p>连接您和机甲的故事</p>
+            </div>
+            <ul>
+                <li class="d-ib">
+                    <h3>建设机械</h3>
+                    <img src="img/i1.png" alt="">
+                </li>
+                <li class="d-ib">
+                    <h3>农业机械 </h3>
+                    <img src="img/i2.png" alt="">
+                </li>
+                <li class="d-ib">
+                    <h3>物料搬运</h3>
+                    <img src="img/i3.png" alt="">
+                </li>
+                <li class="d-ib">
+                    <h3>新能源新材料</h3>
+                    <img src="img/i4.png" alt="">
+                </li>
+            </ul>
 
-        var mySwiper = new Swiper('.shuffling .swiper-container', {
-            speed:2000,
-            autoplay: {
-                delay: 5000,
-                stopOnLastSlide: false,
-                disableOnInteraction: true,
-            },//可选选项，自动滑动
-            direction : 'vertical',
-            allowTouchMove: false,
-            //loop:true,
-            /*pagination: {
-                el: '.shuffling .swiper-pagination',
-                clickable :true,
-                renderBullet: function (index, className) {
-                    switch(index){
-                        case 0:text='01';break;
-                        case 1:text='02';break;
-                        case 2:text='03';break;
-                    }
-                    return '<span class="' + className + '">' + text + '</span>';
-                },
-            },*/
+        </div>
+    </div>
+    <!--index end-->
+    <!--next start-->
+    <div class="next part">
+        <div class="content">
+            <div class="i-title">
+                <h3>合作伙伴</h3>
+                <p>平等尊重，建立动态平衡和谐的良性关系，</p>
+                <p>携手共建产业新零售生态圈</p>
+            </div>
+            <div class="indexImg">
+                <img src="img/index.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!--next end-->
+    <!--footer start-->
+    <footer class="part">
+        <div class="content">
+            <div class="d-ib">
+                <h3>
+                    <a href="">服务内容架构</a>
+                </h3>
+                <div>
+                    <a href="">机甲云智能实验室</a>
+                    <a href="">机甲链SIOT服务平台</a>
+                    <a href="">新车新部品新零售</a>
+                    <a href="">金融生态服务</a>
+                    <a href="">机甲商事</a>
+                </div>
+            </div>
+            <div class="d-ib">
+                <h3>
+                    <a href="">买机甲</a>
+                </h3>
+                <div>
+                    <a href="">车源需求发布</a>
+                    <a href="">买机甲流程</a>
+                    <a href="">买机甲保障</a>
+                </div>
+            </div>
+            <div class="d-ib">
+                <a href="">
+                    <img src="img/logo2.png" alt="">
+                </a>
+            </div>
+            <div class="d-ib">
+                <h3>
+                    <a href="">卖机甲</a>
+                </h3>
+                <div>
+                    <a href="">机甲车源发布</a>
+                    <a href="">卖机甲流程</a>
+                    <a href="">机甲出售保障</a>
 
-        })
-    </script>
-    <script>
-        if($(window).width()<1000){
+                </div>
+            </div>
+            <div class="d-ib">
+                <h3>
+                    <a href="">创客达人招募</a>
+                </h3>
+                <div>
+                    <a href="">创客赚钱方式</a>
+                    <a href="">创客平台介绍</a>
+                    <a href="">创客达人优势</a>
+                    <a href="">如何成为创客达人</a>
 
-        }else {
-            var $part = $(".part");
-            var $pager = $(".pagers > div");
-            //页面滚动
-            (function(){
-                var index = 0;
-                var wH = $(window).height();
-                var nowTime = new Date();
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--footer end-->
+    <!--pagers start -->
+    <div class="pagers">
+        <div class="on">01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+    </div>
+    <!--pagers end-->
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/swiper-4.3.5.min.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+<script src="js/hdNav.js"></script>
+<script>
+    $("header").addClass("other");
 
-                $pager.click(function () {
-                    $(this).addClass("on").siblings().removeClass("on");
-                    index=$(this).index();
+    var mySwiper = new Swiper('.shuffling .swiper-container', {
+        speed: 2000,
+        autoplay: {
+            delay: 5000,
+            stopOnLastSlide: false,
+            disableOnInteraction: true,
+        },//可选选项，自动滑动
+        direction: 'vertical',
+        allowTouchMove: false,
+        //loop:true,
+        /*pagination: {
+            el: '.shuffling .swiper-pagination',
+            clickable :true,
+            renderBullet: function (index, className) {
+                switch(index){
+                    case 0:text='01';break;
+                    case 1:text='02';break;
+                    case 2:text='03';break;
+                }
+                return '<span class="' + className + '">' + text + '</span>';
+            },
+        },*/
+
+    })
+</script>
+<script>
+    if ($(window).width() < 1000) {
+
+    } else {
+        var $part = $(".part");
+        var $pager = $(".pagers > div");
+        //页面滚动
+        (function () {
+            var index = 0;
+            var wH = $(window).height();
+            var nowTime = new Date();
+
+            $pager.click(function () {
+                $(this).addClass("on").siblings().removeClass("on");
+                index = $(this).index();
+                move();
+            });
+
+            $(window).resize(function () {
+                wH = $(window).height();
+            });
+            $(".returnTop").click(function () {
+                index = 0;
+                $(this).hide();
+            });
+            $(document).mousewheel(function () {
+                if (new Date() - nowTime > 500) {
+                    nowTime = new Date();
+                    var d = arguments[1];
+                    index = d < 0 ? (index >= $part.length - 1 ? $part.length - 1 : index + 1) : (index <= 0 ? 0 : index - 1);
+                    index == 0 ? $(".returnTop").hide() : $(".returnTop").show();
+                    $pager.eq(index).addClass("on").siblings().removeClass("on");
                     move();
-                });
-
-                $(window).resize(function(){
-                    wH = $(window).height();
-                });
-                $(".returnTop").click(function () {
-                    index = 0;
-                    $(this).hide();
-                });
-                $(document).mousewheel(function(){
-                    if ( new Date() - nowTime > 500 ) {
-                        nowTime = new Date();
-                        var d = arguments[1];
-                        index=d<0?(index>=$part.length-1?$part.length-1:index+1):(index<=0?0:index-1);
-                        index==0? $(".returnTop").hide():$(".returnTop").show();
-                        $pager.eq(index).addClass("on").siblings().removeClass("on");
-                        move();
-                    };
-                });
+                }
+                ;
+            });
 
 
-
-                function move(){
-                    $('body,html').stop().animate({
-                        scrollTop : index*wH
-                    },500)}
-            })();
-        }
+            function move() {
+                $('body,html').stop().animate({
+                    scrollTop: index * wH
+                }, 500)
+            }
+        })();
+    }
 
 
     $(function () {
         $('body,html').animate({
-            scrollTop : 0
-        },500)
+            scrollTop: 0
+        }, 500)
     });
 
 
+    var message = new Vue({
+        el: '#message',
+        data: {
+            banner: {},
+            baseUrl: urlPre
+        },
+        created: function () {
+            var that = this;
+            //获取banner图
+            $.get("banner/getByType",
+                {
+                    type: 1
+                },
+                function (res) {
+                    if (res.code == 0) {
+                        that.banner = res.data[0];
+                    } else {
+                        //错误提示
+                        alert(res.msg);
+                    }
+                });
 
-
-    </script>
+        },
+        methods: {}
+    })
+</script>
 </body>
 </html>

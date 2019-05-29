@@ -1,8 +1,8 @@
-if( $(window).width()<1000 ){
+if ($(window).width() < 1000) {
     $("header .phone").click(function () {
         $("header nav").stop().slideToggle();
     });
-}else {
+} else {
     $("header nav > div:nth-of-type(5)").hover(function () {
             $(".sNav").stop().slideToggle();
         },
@@ -10,7 +10,7 @@ if( $(window).width()<1000 ){
             $(".sNav").stop().slideToggle();
         },
     );
-    
+
     $(".sNav").hover(function () {
             $(this).stop().slideToggle();
         },
@@ -19,3 +19,5 @@ if( $(window).width()<1000 ){
         },
     );
 }
+
+var urlPre = 'http://localhost:8080/';

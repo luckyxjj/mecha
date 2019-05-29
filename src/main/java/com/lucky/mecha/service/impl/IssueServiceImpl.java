@@ -29,9 +29,7 @@ public class IssueServiceImpl implements IssueService {
 
     @Override
     public IssueResponse submit(IssueRequest request) throws MechaException {
-        if (!request.validate()){
-            throw new MechaException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
-        }
+
         Issue issue = new Issue();
         BeanUtils.copyProperties(request,issue);
         Date deliveryTime = CommonUtils.parseStringToDate(request.getDeliveryTime());

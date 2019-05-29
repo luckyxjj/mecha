@@ -24,7 +24,7 @@ public class BannerController {
     }
 
     @GetMapping("/getByType")
-    public List<BannerResponse> getByType(@RequestBody BannerRequest request) throws MechaException {
+    public List<BannerResponse> getByType(BannerRequest request) throws MechaException {
         return bannerService.findByType(request);
     }
 }

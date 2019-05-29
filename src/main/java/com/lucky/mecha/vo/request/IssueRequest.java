@@ -44,7 +44,7 @@ public class IssueRequest {
                 && !StringUtils.isEmpty(district)
                 && null != expectedPrice
                 && !StringUtils.isEmpty(deliveryTime)
-                && !StringUtils.isEmpty(imgUrl)
+//                && !StringUtils.isEmpty(imgUrl)
                 && !StringUtils.isEmpty(linkman)
                 && null != sex
                 && !StringUtils.isEmpty(phone)

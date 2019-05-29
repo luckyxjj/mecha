@@ -1,5 +1,6 @@
 package com.lucky.mecha.service.impl;
 
+import com.github.pagehelper.PageInfo;
 import com.lucky.mecha.Constant.Constants;
 import com.lucky.mecha.dao.AboutRepository;
 import com.lucky.mecha.dao.BannerRepository;
@@ -8,6 +9,7 @@ import com.lucky.mecha.entity.Banner;
 import com.lucky.mecha.exception.MechaException;
 import com.lucky.mecha.service.AboutService;
 import com.lucky.mecha.service.BannerService;
+import com.lucky.mecha.vo.Pager;
 import com.lucky.mecha.vo.request.BannerRequest;
 import com.lucky.mecha.vo.response.AboutResponse;
 import com.lucky.mecha.vo.response.BannerResponse;
@@ -46,5 +48,19 @@ public class BannerServiceImpl implements BannerService {
             });
         }
         return bannerResponses;
+    }
+
+    @Override
+    public Pager<Banner> findAllBk(Pager pager) {
+        List<Banner> banners = bannerRepository.findAll();
+        if (banners.size()>0){
+            PageInfo<Banner> info = new PageInfo<>(banners);
+            pager.setRows(info.getList());
+            pager.setTotal((int)info.getTotal());
+        }else {
+            pager.setRows(banners);
+            pager.setTotal(0);
+        }
+        return pager;
     }
 }

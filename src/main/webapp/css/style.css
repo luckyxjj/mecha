@@ -744,6 +744,7 @@
     text-align: left;
 }
 .sell .content .form .up .input input[type=date],
+.sell .content .form .up .input input[type=number],
 .sell .content .form .up .input input[type=text]{
     width: 100%;
     height: 100%;
@@ -1083,6 +1084,9 @@
     height: 42px;
     background: url("../img/close.png") no-repeat center;
     cursor: pointer;
+}
+.hide{
+    display: none;
 }
 
 

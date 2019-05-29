@@ -1,6 +1,8 @@
 package com.lucky.mecha.service;
 
+import com.lucky.mecha.entity.Banner;
 import com.lucky.mecha.exception.MechaException;
+import com.lucky.mecha.vo.Pager;
 import com.lucky.mecha.vo.request.BannerRequest;
 import com.lucky.mecha.vo.response.BannerResponse;
 
@@ -14,4 +16,6 @@ import java.util.List;
  */
 public interface BannerService {
     List<BannerResponse> findByType(BannerRequest request) throws MechaException;
+
+    Pager<Banner> findAllBk(Pager pager);
 }
