@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/vue.js"></script>
 </head>
 <body>
 <div id="wrap">
@@ -66,8 +67,8 @@
     </header>
     <!--header end-->
     <!--banner start-->
-    <div class="banner p-r">
-        <img src="img/banner3.png" alt="">
+    <div class="banner p-r" id="message">
+        <img :src="baseUrl+banner.urlCn">
     </div>
     <!--banner end-->
     <!--buy start-->
@@ -309,6 +310,32 @@
                 }
             }, "json");
     }
+
+    var message = new Vue({
+        el: '#message',
+        data: {
+            banner: {},
+            baseUrl: urlPre
+        },
+        created: function () {
+            var that = this;
+            //获取banner图
+            $.get("banner/getByType",
+                {
+                    type: 4
+                },
+                function (res) {
+                    if (res.code == 0) {
+                        that.banner = res.data[0];
+                    } else {
+                        //错误提示
+                        alert(res.msg);
+                    }
+                });
+
+        },
+        methods: {}
+    })
 </script>
 </body>
 </html>

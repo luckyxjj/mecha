@@ -11,7 +11,7 @@
  Target Server Version : 50720
  File Encoding         : 65001
 
- Date: 29/05/2019 08:22:31
+ Date: 30/05/2019 07:57:27
 */
 
 SET NAMES utf8mb4;
@@ -67,20 +67,30 @@ INSERT INTO `admin` VALUES (1, 'lucky', 'D0970714757783E6CF17B26FB8E2298F', '', 
 DROP TABLE IF EXISTS `banner`;
 CREATE TABLE `banner`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '名称',
   `url_cn` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '中文链接',
   `url_en` varchar(256) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '英文链接',
+  `run_url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL DEFAULT '' COMMENT '跳转路径',
   `type` tinyint(255) NOT NULL COMMENT '类型 1：首页 2：关于我们 3：事业内容架构 4：买机甲 5：卖机甲 6：商城入口 7：创客达人招募 8：服务保障 9：咨询服务',
   `delete_flag` tinyint(4) NOT NULL DEFAULT 1 COMMENT '删除状态 0：删除 1：正常',
   `flag` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `create_time` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '轮播图表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '轮播图表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of banner
 -- ----------------------------
-INSERT INTO `banner` VALUES (1, '\\upload\\15590599032340B2U6lIOEd.png', '\\upload\\15590599032340B2U6lIOEd.png', 1, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 07:57:13');
+INSERT INTO `banner` VALUES (1, '首页banner', 'upload\\1559141643237RU2wI8Nypd.png', 'upload\\1559141643278tghPmOrhul.png', '1212', 1, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 23:59:24');
+INSERT INTO `banner` VALUES (2, '关于我们banner', '\\upload\\1559086659378NMTQMruiLI.png', '\\upload\\1559086659378NMTQMruiLI.png', '1', 2, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 21:26:11');
+INSERT INTO `banner` VALUES (3, '事业内容架构banner', '\\upload\\1559086659378NMTQMruiLI.png', '\\upload\\1559086659378NMTQMruiLI.png', '1', 3, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 21:26:12');
+INSERT INTO `banner` VALUES (4, '买机甲banner', '\\upload\\1559086659378NMTQMruiLI.png', '\\upload\\1559086659378NMTQMruiLI.png', '', 4, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 21:24:29');
+INSERT INTO `banner` VALUES (5, '卖机甲banner', '\\upload\\1559086659378NMTQMruiLI.png', '\\upload\\1559086659378NMTQMruiLI.png', '1', 5, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 21:26:13');
+INSERT INTO `banner` VALUES (6, '商城入口banner', '\\upload\\1559086659378NMTQMruiLI.png', '\\upload\\1559086659378NMTQMruiLI.png', '1', 6, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 21:26:15');
+INSERT INTO `banner` VALUES (7, '创客达人banner', '\\upload\\1559086659378NMTQMruiLI.png', '\\upload\\1559086659378NMTQMruiLI.png', '1', 7, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 21:26:16');
+INSERT INTO `banner` VALUES (8, '服务保障banner', '\\upload\\1559086659378NMTQMruiLI.png', '\\upload\\1559086659378NMTQMruiLI.png', '1', 8, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 21:26:18');
+INSERT INTO `banner` VALUES (9, '咨询服务banner', '\\upload\\1559086659378NMTQMruiLI.png', '\\upload\\1559086659378NMTQMruiLI.png', '1', 9, 1, NULL, '2019-05-26 15:16:56', '2019-05-29 21:26:19');
 
 -- ----------------------------
 -- Table structure for brand

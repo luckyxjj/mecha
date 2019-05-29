@@ -13,11 +13,13 @@ import com.lucky.mecha.vo.Pager;
 import com.lucky.mecha.vo.request.BannerRequest;
 import com.lucky.mecha.vo.response.AboutResponse;
 import com.lucky.mecha.vo.response.BannerResponse;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * User: lucky
@@ -62,5 +64,39 @@ public class BannerServiceImpl implements BannerService {
             pager.setTotal(0);
         }
         return pager;
+    }
+
+    @Override
+    public BannerResponse updateBk(Banner request) {
+        Optional<Banner> bannerOptional = bannerRepository.findById(request.getId());
+        Banner oldBanner = bannerOptional.get();
+        String[] ignore = new String[2];
+        if (StringUtils.isEmpty(request.getUrlCn())){
+            ignore[0]="urlCn";
+        }
+        if (StringUtils.isEmpty(request.getUrlEn())){
+            ignore[1]="urlEn";
+        }
+        BeanUtils.copyProperties(request,oldBanner,ignore);
+        Banner banner = bannerRepository.save(oldBanner);
+        BannerResponse bannerResponse = new BannerResponse();
+        BeanUtils.copyProperties(banner,bannerResponse);
+        return bannerResponse;
+    }
+
+    @Override
+    public BannerResponse addBk(Banner request) {
+        Banner banner = new Banner();
+        BeanUtils.copyProperties(request,banner);
+        Banner result = bannerRepository.save(banner);
+        BannerResponse bannerResponse = new BannerResponse();
+        BeanUtils.copyProperties(result,bannerResponse);
+        return bannerResponse;
+    }
+
+    @Override
+    public String delete(Long id) {
+        bannerRepository.deleteById(id);
+        return "yes";
     }
 }

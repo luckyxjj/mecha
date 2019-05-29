@@ -7,6 +7,7 @@ public class Constants {
         public static final String USERNAME_OR_PASSWORD_ERROR = "用户名或密码错误";
         public static final String NOT_LOGIN = "没有登录";
         public static final String ISSUE_PARA_ERROR = "发布失败，请填写完整信息后再发布";
+        public static final String IMPERFECTION_IMG = "请同时选择中文图片和英文图片上传";
     }
 
 }

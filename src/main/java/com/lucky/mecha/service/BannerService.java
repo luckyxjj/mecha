@@ -18,4 +18,10 @@ public interface BannerService {
     List<BannerResponse> findByType(BannerRequest request) throws MechaException;
 
     Pager<Banner> findAllBk(Pager pager);
+
+    BannerResponse updateBk(Banner request);
+
+    BannerResponse addBk(Banner request);
+
+    String delete(Long id);
 }

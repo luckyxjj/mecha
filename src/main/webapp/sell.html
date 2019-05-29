@@ -20,7 +20,7 @@
     <script src="js/vue.js"></script>
 </head>
 <body>
-<div id="wrap">
+<div id="message">
     <!--header start-->
     <header class="">
         <div class="content clearfix">
@@ -80,12 +80,12 @@
     <!--header end-->
     <!--banner start-->
     <div class="banner p-r">
-        <img src="img/banner7.png" alt="">
+        <img :src="baseUrl+banner.urlCn">
     </div>
     <!--banner end-->
     <!--sell start-->
     <div class="sell">
-        <div class="content" id="message">
+        <div class="content" >
             <form id="form_submit" action="#" enctype="multipart/form-data"
                   name="form_submit" method="post">
                 <div class="form">
@@ -370,30 +370,6 @@
             }
         });
 
-
-        // $.post("issue/submit", {
-        //         categoryName: categoryName,
-        //         brandName: brandName,
-        //         unitType: unitType,
-        //         province: province,
-        //         city: city,
-        //         district: district,
-        //         expectedPrice: expectedPrice,
-        //         deliveryTime: deliveryTime,
-        //         imgUrl: imgUrl,
-        //         linkman: linkman,
-        //         phone: phone,
-        //         mail: mail,
-        //         wechat: wechat,
-        //         usingExperience: usingExperience
-        //     },
-        //     function (res) {
-        //         if (res.code == 0) {
-        //             alert("发布成功，等待后台审核");
-        //         } else {
-        //             alert(res.data);
-        //         }
-        //     }, "json");
     }
 
 
@@ -405,7 +381,9 @@
             provinceList: [],
             cityList: [],
             districtList: [],
-            isChoose: 0
+            isChoose: 0,
+            banner: {},
+            baseUrl: urlPre
         },
         created: function () {
             var that = this;
@@ -438,7 +416,21 @@
                     that.provinceList = res;
                     that.cityList = res[0];
                     that.districtList = that.cityList.city[0]
-                })
+                });
+            //获取banner图
+            $.get("banner/getByType",
+                {
+                    type: 5
+                },
+                function (res) {
+                    if (res.code == 0) {
+                        that.banner = res.data[0];
+                    } else {
+                        //错误提示
+                        alert(res.msg);
+                    }
+                });
+
 
         },
         methods: {

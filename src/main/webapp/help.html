@@ -16,7 +16,7 @@
     <script src="js/vue.js"></script>
 </head>
 <body>
-    <div id="wrap">
+    <div id="message">
         <!--header start-->
         <header class="">
             <div class="content clearfix">
@@ -76,13 +76,13 @@
         <!--header end-->
         <!--banner start-->
         <div class="banner p-r">
-            <img src="img/banner4.png" alt="">
+            <img :src="baseUrl+banner.urlCn">
         </div>
         <!--banner end-->
         <!--help start-->
         <div class="buy help">
             <div class="construction">
-                <div class="content" id="message">
+                <div class="content" >
                     <div class="contact">
                         <div v-html="data.content">
 
@@ -194,8 +194,8 @@
             el: '#message',
             data: {
                 data: {},
-                baseUrl: 'http://www.delmei.com.cn/source/',
-                language: 0
+                banner: {},
+                baseUrl: urlPre
             },
             created: function () {
                 var that = this;
@@ -213,7 +213,21 @@
                             //错误提示
                             alert(res.msg);
                         }
-                    })
+                    });
+                //获取banner图
+                $.get("banner/getByType",
+                    {
+                        type: 9
+                    },
+                    function (res) {
+                        if (res.code == 0) {
+                            that.banner = res.data[0];
+                        } else {
+                            //错误提示
+                            alert(res.msg);
+                        }
+                    });
+
 
             },
             methods: {
