@@ -1,5 +1,6 @@
 package com.lucky.mecha.advice;
 
+import com.alibaba.fastjson.JSONObject;
 import com.lucky.mecha.annotation.IgnoreResponseAdvice;
 import com.lucky.mecha.vo.CommonResponse;
 import com.lucky.mecha.vo.Pager;
@@ -42,6 +43,8 @@ public class CommonResponseDataAdvice implements ResponseBodyAdvice<Object> {
         }else if (o instanceof CommonResponse){//已经是CommonResponse类型，强转
             response = (CommonResponse<Object>) o;
         }else if (o instanceof Pager){//专为后台Pager格式
+            return o;
+        }else if (o instanceof JSONObject){//专为后台上传格式
             return o;
         }else {//其他类型，放到data中
             response.setData(o);
