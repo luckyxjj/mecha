@@ -1,4 +1,4 @@
-package com.lucky.mecha.controller;
+package com.lucky.mecha.controller.admin;
 
 import com.lucky.mecha.Constant.Constants;
 import com.lucky.mecha.entity.Admin;
@@ -6,7 +6,10 @@ import com.lucky.mecha.exception.MechaException;
 import com.lucky.mecha.service.AdminService;
 import com.lucky.mecha.vo.request.AdminRequest;
 import com.lucky.mecha.vo.response.AdminResponse;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 
@@ -17,11 +20,11 @@ import javax.servlet.http.HttpSession;
  * Description:
  */
 @RestController
-@RequestMapping("/admin")
-public class AdminController {
+@RequestMapping("/adminBk")
+public class AdminControllerBk {
     private final AdminService adminService;
 
-    public AdminController(AdminService adminService) {
+    public AdminControllerBk(AdminService adminService) {
         this.adminService = adminService;
     }
 

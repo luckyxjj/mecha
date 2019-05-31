@@ -1,7 +1,7 @@
 function logout() {
     var r = confirm("是否退出");
     if (r == true) {
-        $.get("adminBK/logout",
+        $.get("adminBk/logout",
             function (res) {
                 if (res.code == 0) {
                     window.location.href = "login-bk.html"
@@ -17,7 +17,7 @@ function logout() {
 
 window.onload = function () {
     $(document).ready(function () {
-        $.get("adminBK/checkLoginBack",
+        $.get("adminBk/checkLoginBack",
             function (res) {
              if (res.code == 0) {
                 } else {
