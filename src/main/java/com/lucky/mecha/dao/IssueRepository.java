@@ -12,5 +12,5 @@ import java.util.List;
  * Description:
  */
 public interface IssueRepository extends JpaRepository<Issue, Long>{
-    List<Issue> findByLinkmanOrPhoneLike(String condition,String condition2);
+    List<Issue> findByLinkmanLikeOrPhoneLike(String condition,String condition2);
 }

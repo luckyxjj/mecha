@@ -52,7 +52,9 @@ public class BannerControllerBk {
                 String saveUrl = FileUtil.uploadFiles(file, realPath);
                 String[] imgPath = saveUrl.split(",");
                 request.setUrlCn(imgPath[0]);
-                request.setUrlEn(imgPath[1]);
+                if (imgPath.length>1){
+                    request.setUrlEn(imgPath[1]);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -72,7 +74,9 @@ public class BannerControllerBk {
                 String saveUrl = FileUtil.uploadFiles(file, realPath);
                 String[] imgPath = saveUrl.split(",");
                 request.setUrlCn(imgPath[0]);
-                request.setUrlEn(imgPath[1]);
+                if (imgPath.length>1){
+                    request.setUrlEn(imgPath[1]);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }

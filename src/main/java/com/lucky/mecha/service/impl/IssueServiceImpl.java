@@ -49,7 +49,7 @@ public class IssueServiceImpl implements IssueService {
     public Pager<Issue> findAllBk(Pager pager) {
         List<Issue> issues = new ArrayList<>();
         if (!StringUtils.isEmpty(pager.getCondition())){
-            issues = issueRepository.findByLinkmanOrPhoneLike(pager.getCondition()+"%",pager.getCondition()+"%");
+            issues = issueRepository.findByLinkmanLikeOrPhoneLike(pager.getCondition()+"%",pager.getCondition()+"%");
         }else {
             issues = issueRepository.findAll();
         }

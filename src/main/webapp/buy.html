@@ -13,7 +13,7 @@
     <script src="js/vue.js"></script>
 </head>
 <body>
-<div id="wrap">
+<div id="message">
     <!--header start-->
     <header class="">
         <div class="content clearfix">
@@ -55,7 +55,7 @@
                 <div class="lwg fl">
                     <a href="">中文</a>
                     丨
-                    <a href="">EN</a>
+                    <a href="en/buy.html">EN</a>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
     </header>
     <!--header end-->
     <!--banner start-->
-    <div class="banner p-r" id="message">
+    <div class="banner p-r" >
         <img :src="baseUrl+banner.urlCn">
     </div>
     <!--banner end-->
@@ -79,7 +79,7 @@
                     <p>您需要任何产品、品牌、机型等，可通过以下任意方式联系我们，为您提供最佳购买方案</p>
                     <div class="clearfix">
                         <input class="fl" type="text" placeholder="请输入您的手机号/微信号/邮箱号" id="contact">
-                        <div  onclick="submit()" class="fr submit-div">咨询更多优惠</div>
+                        <div @click="submit" class="fr submit-div">咨询更多优惠</div>
                     </div>
                 </div>
             </div>
@@ -292,24 +292,6 @@
         $(".construction .class .right").hide();
     });
 
-    function submit() {
-        var contact = $("#contact").val();
-        if (contact == "") {
-            alert('请输入您的联系方式');
-            return;
-        }
-        $.post("buying/submit", {
-                contact: contact
-            },
-            function (res) {
-                if (res.code == 0) {
-                    alert("提交成功，稍后会有工作人员联系您");
-                    $("#contact").val("");
-                } else {
-                    alert(res.data);
-                }
-            }, "json");
-    }
 
     var message = new Vue({
         el: '#message',
@@ -334,7 +316,26 @@
                 });
 
         },
-        methods: {}
+        methods: {
+            submit: function () {
+                var contact = $("#contact").val();
+                if (contact == "") {
+                    alert('请输入您的联系方式');
+                    return;
+                }
+                $.post("buying/submit", {
+                        contact: contact
+                    },
+                    function (res) {
+                        if (res.code == 0) {
+                            alert("提交成功，稍后会有工作人员联系您");
+                            $("#contact").val("");
+                        } else {
+                            alert(res.data);
+                        }
+                    }, "json");
+            }
+        }
     })
 </script>
 </body>

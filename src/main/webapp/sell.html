@@ -62,7 +62,7 @@
                 <div class="lwg fl">
                     <a href="">中文</a>
                     丨
-                    <a href="">EN</a>
+                    <a href="en/sell.html">EN</a>
                 </div>
                 <div class="phone p-a">
                     <p></p>
@@ -114,11 +114,9 @@
                     <div class="up">
                         <div class="d-ib">停放地点</div>
                         <select name="province" id="province" @change="changeProvince($event)">
-                            <!--                                <option value="" >请选择使用省份</option>-->
                             <option :value="province.name" v-for="province in provinceList">{{province.name}}</option>
                         </select>
                         <select name="city" id="city" @change="changeCity($event)">
-                            <!--                                <option value="">请选择使用城市</option>-->
                             <option :value="city.name" v-for="city in cityList.city">{{city.name}}</option>
                         </select>
                         <select name="district" id="district">
@@ -129,13 +127,13 @@
                     <div class="up">
                         <div class="d-ib">期望价格</div>
                         <div class="input d-ib p-r">
-                            <input type="number" placeholder="请输入出售价格" name="expectedPrice" id="expectedPrice">
+                            <input type="number" placeholder="请输入期望价格" name="expectedPrice" id="expectedPrice">
                         </div>
                     </div>
                     <div class="up">
                         <div class="d-ib">出厂年限</div>
                         <div class="input d-ib p-r">
-                            <input type="date" placeholder="请输入出售价格" name="deliveryTime" id="deliveryTime">
+                            <input type="date" placeholder="请输入出厂年限" name="deliveryTime" id="deliveryTime">
                         </div>
                     </div>
                     <div class="up">

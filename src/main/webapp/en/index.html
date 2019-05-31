@@ -1,0 +1,356 @@
+<!doctype html><!--文档头信息——默认html文档-->
+<html lang="en"><!--根标签 en表英语 -->
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8"><!-- 字符编码 -->
+    <meta name="Generator" content="EditPlus®"><!-- 使用编辑器 不重要 可以不写 -->
+    <meta name="Author" content="XX"><!-- 作者 可以不写-->
+    <meta name="Keywords" content=""><!-- 关键字 -->
+    <meta name="Description" content=""><!-- 描述 对网页做一个描述，介绍网页-->
+    <title>Document</title><!-- 标题 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/swiper-4.3.5.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meida-common.css">
+    <link rel="stylesheet" href="css/media-style.css">
+    <script src="../js/vue.js"></script>
+</head>
+<style>
+    body,html{
+        height:100%;
+    }
+    body{
+        overflow: hidden;
+    }
+    #wrap{
+        width: 100%;
+        height: 100%;
+    }
+    #wrap .part{
+        width:100%;
+        height:100%;
+        position:relative;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 2;
+    }
+    @media screen and (max-width: 1000px){
+        body{
+            overflow: auto;
+        }
+        #wrap .part{
+            height: auto;
+        }
+        .shuffling{
+            height: 700px!important;
+        }
+    }
+
+    @media screen and (max-width: 600px){
+        .shuffling{
+            height: 500px!important;
+        }
+        .shuffling .swiper-slide{
+            background: url(img/banner6.png) center center / 240% 100% no-repeat!important;
+        }
+    }
+</style>
+<body>
+    <div id="wrap">
+        <!--header start-->
+        <header class="">
+            <div class="content clearfix">
+                <h1 class="fl">
+                    <a href="">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </h1>
+                <div class="right fr clearfix">
+                    <nav class="fl">
+                        <div class="d-ib on">
+                            <a href="index.html">HOME</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="about.html">ABOUT US</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="career.html">BUSINESS</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="buy.html">BUYING</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="sell.html">MECH-SALES</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="sc.html">MECH-WORLD</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="recruiting.html">JOIN US</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="service.html">SERVICE</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="help.html">CONSULT</a>
+                        </div>
+                    </nav>
+                    <div class="lwg fl">
+                        <a href="../index.html">中文</a>
+                        丨
+                        <a href="">EN</a>
+                    </div>
+                    <div class="phone p-a">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+             <div class="sNav p-a">
+                <a href="">Release equipment</a>
+                <a href="">Process For Mecha Selling</a>
+                <a href="">Assurance For Mecha Selling</a>
+            </div>
+        </header>
+        <!--header end-->
+        <!--shuffling start-->
+        <div class="shuffling part" id="message">
+            <div class=" swiper-container">
+                <div class="swiper-wrapper">
+<!--                    <div class="swiper-slide" style="background: url(img/banner6.png) no-repeat center/cover ;"></div>-->
+                    <img :src="baseUrl+banner.urlEn">
+                </div>
+                <!--<div class="swiper-pagination"></div>-->
+            </div>
+        </div>
+        <!--shuffling end-->
+        <!--index start-->
+        <div class="index part">
+            <div class="content">
+                <div class="i-title mb">
+                    <h3>Mech Categories</h3>
+                    <p>Connect you and mecha</p>
+                </div>
+                <ul>
+                    <li class="d-ib">
+                        <h3>Construction Machinery</h3>
+                        <img src="img/i1.png" alt="">
+                    </li>
+                    <li class="d-ib">
+                        <h3>Agricultural Machinery </h3>
+                        <img src="img/i2.png" alt="">
+                    </li>
+                    <li class="d-ib">
+                        <h3>Material Handling Equipment</h3>
+                        <img src="img/i3.png" alt="">
+                    </li>
+                    <li class="d-ib">
+                        <h3>New Energy Resources·New Material</h3>
+                        <img src="img/i4.png" alt="">
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!--index end-->
+        <!--next start-->
+        <div class="next part">
+            <div class="content">
+                <div class="i-title">
+                    <h3>Cooperative Partner</h3>
+                    <p>Be always impartial and respectful for harmonious partnership,</p>
+                    <p>new and sustainable retail ecosphere.   </p>
+                </div>
+                <div class="indexImg">
+                    <img src="img/index.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!--next end-->
+        <!--footer start-->
+        <footer class="part">
+            <div class="content">
+                <div class="d-ib">
+                    <h3>
+                        <a href="">Business Architecture</a>
+                    </h3>
+                    <div>
+                        <a href="">Mech-Cloud Smart Lab</a>
+                        <a href="">Mech-Chain SIOT Service Platform</a>
+                        <a href="">Innovative Mecha Transaction & Bran-New Retail Mode</a>
+                        <a href="">Financial Service</a>
+                        <a href="">Mech Pioneer Business</a>
+                    </div>
+                </div>
+                <div class="d-ib">
+                    <h3>
+                        <a href="">Mecha Buying</a>
+                    </h3>
+                    <div>
+                          <a href="">Macha Demand Consultation</a>
+                        <a href="">Process For Mecha Purchasing</a>
+                       
+                    </div>
+                </div>
+                <div class="d-ib">
+                    <a href="">
+                        <img src="img/logo2.png" alt="">
+                    </a>
+                </div>
+                
+                <div class="d-ib">
+                     <h3>
+                        <a href="">Mecha-Sales  </a>
+                    </h3>
+                    <div>
+                        <a href="">Release equipment</a>
+                        <a href="">Process For Mecha Selling</a>
+                        <a href="">Assurance For Mecha Selling</a>
+                    </div>
+                </div>
+
+                <div class="d-ib">
+                    <h3>
+                        <a href="">Maker Recruitment</a>
+                    </h3>
+                    <div>
+                        <a href="">Profitable way</a>
+                        <a href="">Platform for maker</a>
+                        <a href="">Value For Maker</a>
+                        <a href="">How to be a maker</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer end-->
+        <!--pagers start -->
+        <div class="pagers">
+            <div class="on">01</div>
+            <div>02</div>
+            <div>03</div>
+            <div>04</div>
+        </div>
+        <!--pagers end-->
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/swiper-4.3.5.min.js"></script>
+    <script src="js/jquery.mousewheel.js"></script>
+    <script src="js/hdNav.js"></script>
+    <script>
+        $("header").addClass("other");
+
+        var mySwiper = new Swiper('.shuffling .swiper-container', {
+            speed:2000,
+            autoplay: {
+                delay: 5000,
+                stopOnLastSlide: false,
+                disableOnInteraction: true,
+            },//可选选项，自动滑动
+            direction : 'vertical',
+            allowTouchMove: false,
+            //loop:true,
+            /*pagination: {
+                el: '.shuffling .swiper-pagination',
+                clickable :true,
+                renderBullet: function (index, className) {
+                    switch(index){
+                        case 0:text='01';break;
+                        case 1:text='02';break;
+                        case 2:text='03';break;
+                    }
+                    return '<span class="' + className + '">' + text + '</span>';
+                },
+            },*/
+
+        })
+    </script>
+    <script>
+        if($(window).width()<1000){
+
+        }else {
+            var $part = $(".part");
+            var $pager = $(".pagers > div");
+            //页面滚动
+            (function () {
+                var index = 0;
+                var wH = $(window).height();
+                var nowTime = new Date();
+
+                $pager.click(function () {
+                    $(this).addClass("on").siblings().removeClass("on");
+                    index = $(this).index();
+                    move();
+                });
+
+                $(window).resize(function () {
+                    wH = $(window).height();
+                });
+                $(".returnTop").click(function () {
+                    index = 0;
+                    $(this).hide();
+                });
+                $(document).mousewheel(function () {
+                    if (new Date() - nowTime > 500) {
+                        nowTime = new Date();
+                        var d = arguments[1];
+                        index = d < 0 ? (index >= $part.length - 1 ? $part.length - 1 : index + 1) : (index <= 0 ? 0 : index - 1);
+                        index == 0 ? $(".returnTop").hide() : $(".returnTop").show();
+                        $pager.eq(index).addClass("on").siblings().removeClass("on");
+                        move();
+                    }
+                    ;
+                });
+
+
+                function move() {
+                    $('body,html').stop().animate({
+                        scrollTop: index * wH
+                    }, 500)
+                }
+            })();
+        }
+
+    $(function () {
+        $('body,html').animate({
+            scrollTop : 0
+        },500)
+    });
+
+
+        var message = new Vue({
+            el: '#message',
+            data: {
+                banner: {},
+                baseUrl: urlPre
+            },
+            created: function () {
+                var that = this;
+                //获取banner图
+                $.get("../banner/getByType",
+                    {
+                        type: 1
+                    },
+                    function (res) {
+                        if (res.code == 0) {
+                            that.banner = res.data[0];
+                        } else {
+                            //错误提示
+                            alert(res.msg);
+                        }
+                    });
+
+            },
+            methods: {}
+        })
+
+    </script>
+</body>
+</html>

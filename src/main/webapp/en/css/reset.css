@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+
+
+
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { display:block; }
+table{border-collapse:collapse;border-spacing:0}
+audio,canvas,video { display: inline-block;*display: inline;*zoom: 1;}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+ol{list-style-type:none;counter-reset:sectioncounter;}
+ol li:before {
+    content:counter(sectioncounter) ".";
+    counter-increment:sectioncounter;
+}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+a{text-decoration: none;color: #000;}
+input{outline:none;}
+body{
+    font-family: Regular , "方正中等线简体";
+}
+img{display: block;width: 100%;height: auto;}
+
+/*宽*/
+.w100{
+    width: 100%;
+}
+input,textarea,button,select{
+    -webkit-appearance: none;
+}
+
+
+/*高*/
+.h100{
+    height: 100%;
+}
+
+/*浮动*/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+
+/*清除浮动*/
+.clearfix:after{
+    content: '';
+    clear: both;
+    display: block;
+}
+
+
+/*display*/
+.d-b{
+    display: block;
+}
+.d-ib{
+    display: inline-block;
+}
+.d-n{
+    display: none;
+}
+.d-f{
+    display: flex;
+}
+
+/*定位*/
+.p-r{
+    position: relative;
+}
+.p-a{
+    position: absolute;
+}
+.p-f{
+    position: fixed;
+}
+
+/*margin*/
+.m-a{
+    margin: auto;
+}
+
+/*cursor*/
+.c-p{
+    cursor: pointer;
+}
+
+/*超出隐藏*/
+.ov-h{
+    overflow: hidden;
+}
+.t-oe{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+.content{
+    width: 1200px;
+    
+    margin: auto;
+}
+

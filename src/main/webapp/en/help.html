@@ -1,0 +1,273 @@
+<!doctype html><!--文档头信息——默认html文档-->
+<html lang="en"><!--根标签 en表英语 -->
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8"><!-- 字符编码 -->
+    <meta name="Generator" content="EditPlus®"><!-- 使用编辑器 不重要 可以不写 -->
+    <meta name="Author" content="XX"><!-- 作者 可以不写-->
+    <meta name="Keywords" content=""><!-- 关键字 -->
+    <meta name="Description" content=""><!-- 描述 对网页做一个描述，介绍网页-->
+    <title>Document</title><!-- 标题 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meida-common.css">
+    <link rel="stylesheet" href="css/media-style.css">
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="message">
+        <!--header start-->
+        <header class="">
+            <div class="content clearfix">
+                <h1 class="fl">
+                    <a href="">
+                        <img src="img/logo.png" alt="">
+                    </a>
+                </h1>
+                <div class="right fr clearfix">
+                    <nav class="fl">
+                        <div class="d-ib on">
+                            <a href="index.html">HOME</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="about.html">ABOUT US</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="career.html">BUSINESS</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="buy.html">BUYING</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="sell.html">MECH-SALES</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="sc.html">MECH-WORLD</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="recruiting.html">JOIN US</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="service.html">SERVICE</a>
+                        </div>
+                        <div class="d-ib">
+                            <a href="help.html">CONSULT</a>
+                        </div>
+                    </nav>
+                    <div class="lwg fl">
+                        <a href="../help.html">中文</a>
+                        丨
+                        <a href="">EN</a>
+                    </div>
+                    <div class="phone p-a">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+             <div class="sNav p-a">
+                <a href="">Release equipment</a>
+                <a href="">Process For Mecha Selling</a>
+                <a href="">Assurance For Mecha Selling</a>
+            </div>
+        </header>
+        <!--header end-->
+        <!--banner start-->
+        <div class="banner p-r">
+            <img :src="baseUrl+banner.urlEn">
+        </div>
+        <!--banner end-->
+        <!--help start-->
+        <div class="buy help">
+            <div class="construction">
+                <div class="content">
+                    <div class="contact">
+                        <div v-html="data.content">
+
+                        </div>
+                        <!--<div class="d-ib">
+                            <span class="d-ib"></span>Inquiry Hotline:+86 18558919898
+                        </div>
+                        <div class="d-ib">
+                            <span class="d-ib"></span>Required Service:service@mech-chain.com
+                        </div>
+                        <div class="d-ib">
+                            <span class="d-ib"></span>WeChat Consulting：taojijia
+                        </div>
+                        <div class="d-ib">
+                            <span class="d-ib"></span>Strategic Cooperation:robin@mech-chain.com
+                        </div>
+                        <div class="d-ib">
+                            <span class="d-ib"></span>QQ：1067491265
+                        </div>
+                        <div class="d-ib">
+                            <span class="d-ib"></span>Head Office Address:economic and technological development zone, Longyan, Fujian, China
+
+                        </div>-->
+                    </div>
+                   <!-- <div class="helpCall p-r clearfix">
+                        <img src="img/img7.png" class="fl" alt="">
+                        <form action="">
+                            <div class="ask fr">
+                                <p>金牌顾问第一时间为您提供最佳购买方案</p>
+                                <div class="clearfix">
+                                    <input class="fl" type="text" placeholder="请输入您的手机号/微信号/邮箱号">
+                                    <a href="" class="fr">咨询更多优惠</a>
+                                </div>
+                            </div>
+                        </form>
+                        <i class="close p-a"></i>
+                    </div>-->
+                    <div class="Img">
+                        <img src="img/wx1.png" alt="">
+                        <img src="img/wxc.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--help end-->
+        <!--footer start-->
+        <footer>
+            <div class="content">
+                <div class="d-ib">
+                     <h3>
+                        <a href="">Business Architecture</a>
+                    </h3>
+                    <div>
+                        <a href="">Mech-Cloud Smart Lab</a>
+                        <a href="">Mech-Chain SIOT Service Platform</a>
+                        <a href="">Innovative Mecha Transaction & Bran-New Retail Mode</a>
+                        <a href="">Financial Service</a>
+                        <a href="">Mech Pioneer Business</a>
+                    </div>
+                </div>
+                <div class="d-ib">
+                     <h3>
+                        <a href="">Mecha Purchasing</a>
+                    </h3>
+                    <div>
+                         <a href="">Release equipment</a>
+                        <a href="">Process For Mecha Purchasing</a>
+                        <a href="">Assurance For Mecha Purchasing</a>
+                    </div>
+                </div>
+                <div class="d-ib">
+                    <a href="">
+                        <img src="img/logo2.png" alt="">
+                    </a>
+                </div>
+                <div class="d-ib">
+                     <h3>
+                        <a href="">Mecha Selling</a>
+                    </h3>
+                    <div>
+                        <a href="">Release equipment</a>
+                        <a href="">Process For Mecha Selling</a>
+                        <a href="">Assurance For Mecha Selling</a>
+                    </div>
+                </div>
+                <div class="d-ib">
+                     <h3>
+                        <a href="">Maker Recruitment</a>
+                    </h3>
+                    <div>
+                        <a href="">Profitable way</a>
+                        <a href="">Platform for maker</a>
+                        <a href="">Welcome to join us</a>
+                        <a href="">How to be a maker</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--footer end-->
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/hdNav.js"></script>
+    <script>
+       /* var close = $(".construction .class .right .close");
+        close.click(function () {
+            $(".construction .class .right").hide();
+        });*/
+
+       var message = new Vue({
+           el: '#message',
+           data: {
+               data: {},
+               banner: {},
+               baseUrl: urlPre
+           },
+           created: function () {
+               var that = this;
+               var te = localStorage.getItem("dem_language")
+               that.language = (localStorage.getItem("dem_language")==null||localStorage.getItem("dem_language")==0)?0:1;
+               //获取关于我们
+               $.get("../counseling/getLastOne",
+                   {
+                       type:'1'
+                   },
+                   function (res) {
+                       if (res.code == 0) {
+                           that.data = res.data;
+                       } else {
+                           //错误提示
+                           alert(res.msg);
+                       }
+                   });
+               //获取banner图
+               $.get("../banner/getByType",
+                   {
+                       type: 9
+                   },
+                   function (res) {
+                       if (res.code == 0) {
+                           that.banner = res.data[0];
+                       } else {
+                           //错误提示
+                           alert(res.msg);
+                       }
+                   });
+
+
+           },
+           methods: {
+               login: function () {
+                   var that = this
+                   var password = $("#password").val()
+                   if (password == "") {
+                       $("#tip").show();
+                       $("#tip").text(that.language==1?that.parameterInfo.us.passTip:that.parameterInfo.cn.passTip);
+                   } else {
+                       $.post("user/login", {
+                               password: password
+                           },
+                           function (res) {
+                               if (res.code == 0) {
+                                   /* 清除密码 */
+                                   $("#password").val("");
+                                   $("#tip").hide();
+                                   sessionStorage.setItem("user", res.data);
+                                   window.location.href = 'product-center-new.html'
+                               } else {
+                                   $("#tip").show();
+                                   if (res.msg=="密码错误"&&that.language==1){//密码错误 英文
+                                       $("#tip").text(that.parameterInfo.us.passError);
+                                   }else {
+                                       //密码错误 中文
+                                       $("#tip").text(that.parameterInfo.cn.passError);
+                                   }
+
+                               }
+
+                           });
+                   }
+
+               }
+
+           }
+       })
+    </script>
+</body>
+</html>

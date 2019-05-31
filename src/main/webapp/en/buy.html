@@ -1,0 +1,358 @@
+<!doctype html><!--文档头信息——默认html文档-->
+<html lang="en"><!--根标签 en表英语 -->
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8"><!-- 字符编码 -->
+    <meta name="Generator" content="EditPlus®"><!-- 使用编辑器 不重要 可以不写 -->
+    <meta name="Author" content="XX"><!-- 作者 可以不写-->
+    <meta name="Keywords" content=""><!-- 关键字 -->
+    <meta name="Description" content=""><!-- 描述 对网页做一个描述，介绍网页-->
+    <title>Document</title><!-- 标题 -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/meida-common.css">
+    <link rel="stylesheet" href="css/media-style.css">
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="message">
+    <!--header start-->
+    <header class="">
+        <div class="content clearfix">
+            <h1 class="fl">
+                <a href="">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </h1>
+            <div class="right fr clearfix">
+                <nav class="fl">
+                    <div class="d-ib on">
+                        <a href="index.html">HOME</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="about.html">ABOUT US</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="career.html">BUSINESS</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="buy.html">BUYING</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="sell.html">MECH-SALES</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="sc.html">MECH-WORLD</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="recruiting.html">JOIN US</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="service.html">SERVICE</a>
+                    </div>
+                    <div class="d-ib">
+                        <a href="help.html">CONSULT</a>
+                    </div>
+                </nav>
+                <div class="lwg fl">
+                    <a href="../buy.html">中文</a>
+                    丨
+                    <a href="">EN</a>
+                </div>
+                <div class="phone p-a">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="sNav p-a">
+            <a href="">Release equipment</a>
+            <a href="">Process For Mecha Selling</a>
+            <a href="">Assurance For Mecha Selling</a>
+        </div>
+    </header>
+    <!--header end-->
+    <!--banner start-->
+    <div class="banner p-r">
+        <img :src="baseUrl+banner.urlEn">
+    </div>
+    <!--banner end-->
+    <!--buy start-->
+    <div class="buy">
+        <form action="">
+            <div class="callus">
+                <div>
+                    <p>Please contact us with following ways for further information and best solution including
+                        product, brand, mecha variant and etc.</p>
+                    <div class="clearfix">
+                        <input class="fl" type="text" placeholder="Please input your e-mail" id="contact">
+                        <div @click="submit" class="fr submit-div">Submit</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="construction">
+            <!--<div class="content">
+                <div class="class clearfix">
+                    <div class="left fl">
+                        <ul>
+                            <li>
+                                <h4>工程机械专区</h4>
+                                <p>迷你挖掘机、挖掘机、装载机、推土机、压路机、起重机、平地机、两头忙</p>
+                            </li>
+                            <li>
+                                <h4>物料搬运专区</h4>
+                                <p>叉车   堆高车 手推车</p>
+                            </li>
+                            <li>
+                                <h4>农业机械专区</h4>
+                                <p>拖拉机、收割机、其他农业机械</p>
+                            </li>
+                            <li>
+                                <h4>其他附属品专区</h4>
+                                <p>建设用属具   农业用属具  搬运用属具  其他</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right fr p-r">
+                        <img src="img/img.png" alt="">
+                        <form action="">
+                            <div class="ask">
+                                <p>金牌顾问第一时间为您提供最佳购买方案</p>
+                                <div class="clearfix">
+                                    <input class="fl" type="text" placeholder="请输入您的手机号/微信号/邮箱号">
+                                    <a href="" class="fr">咨询更多优惠</a>
+                                </div>
+                            </div>
+                        </form>
+                        <i class="close p-a"></i>
+                    </div>
+                </div>
+                <div class="zone">
+                    <div class="c-title">
+                        建设机械专区
+                    </div>
+                    <div class="zList clearfix">
+                        <div class="fl">
+                            <div class="img p-r">
+                                <img src="" alt="">
+                                <div class="p-a">
+                                    <span>超低</span>
+                                    <p>首付</p>
+                                </div>
+                                  </div>
+                            <p>车型车型</p>
+                            <p>车型车型车型车型车型车型</p>
+                            <h5>首付<span class="num">0.65</span>万元 <span class="gray">月供1998元</span></h5>
+                            <a href="">立即咨询></a>
+                        </div>
+                        <div class="fl">
+                            <div class="img p-r">
+                                <img src="" alt="">
+                                <div class="p-a">
+                                    <span>超低</span>
+                                    <p>首付</p>
+                                </div>
+                            </div>
+                            <p>车型车型</p>
+                            <p>车型车型车型车型车型车型</p>
+                            <h5>首付<span class="num">0.65</span>万元 <span class="gray">月供1998元</span></h5>
+                            <a href="">立即咨询></a>
+                        </div>
+                        <div class="fl">
+                            <div class="img p-r">
+                                <img src="" alt="">
+                                <div class="p-a">
+                                    <span>超低</span>
+                                    <p>首付</p>
+                                </div>
+                            </div>
+                            <p>车型车型</p>
+                            <p>车型车型车型车型车型车型</p>
+                            <h5>首付<span class="num">0.65</span>万元 <span class="gray">月供1998元</span></h5>
+                            <a href="">立即咨询></a>
+                        </div>
+                        <div class="fl">
+                            <div class="img p-r">
+                                <img src="" alt="">
+                                <div class="p-a">
+                                    <span>超低</span>
+                                    <p>首付</p>
+                                </div>
+                            </div>
+                            <p>车型车型</p>
+                            <p>车型车型车型车型车型车型</p>
+                            <h5>首付<span class="num">0.65</span>万元 <span class="gray">月供1998元</span></h5>
+                            <a href="">立即咨询></a>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <img src="img/buy.png" alt="">
+        </div>
+        <div class="buyGrogress">
+            <div class="content">
+                <div class="c-title">
+                    Process For Mecha Purchasing
+                </div>
+                <div class="runList clearfix">
+                    <div class="p-r fl">
+                        <img src="img/r1.png" alt="">
+                        <h3>Online consultation</h3>
+                        <p>1.Please kindly leave your contact</p>
+                        <p>&nbsp;&nbsp; information and detail requirement,</p>
+                        <p>&nbsp;&nbsp; our specialist with talk over with</p>
+                        <p>&nbsp;&nbsp; you for the most cost efficient solution. </p>
+
+                        <br>
+                        <p>2.As an option, you can also directly scan </p>
+                        <p>&nbsp;&nbsp; QR code in WeChat APP, to get access to </p>
+                        <p>&nbsp;&nbsp; Mech-Chain world for product self-help </p>
+                        <p>&nbsp;&nbsp; selection.</p>
+
+                    </div>
+                    <div class="p-r fl">
+                        <img src="img/r2.png" alt="">
+                        <h3>Mech sources confirmation</h3>
+                        <p>1.Domestic sources: submit mech </p>
+                        <p>&nbsp;&nbsp; inspection report, reality image </p>
+                        <p>&nbsp;&nbsp; and video and other materials, </p>
+                        <p>&nbsp;&nbsp; then make an appointment for</p>
+                        <p>&nbsp;&nbsp; mecha checking on-site.</p>
+                        <br>
+                        <p>2.Oversea sources: submit mech inspection </p>
+                        <p>&nbsp;&nbsp; report, reality image and video and other</p>
+                        <p>&nbsp;&nbsp; materials.</p>
+
+                    </div>
+                    <div class="p-r fl">
+                        <img src="img/r3.png" alt="">
+                        <h3>Award of contract & Payment of the price</h3>
+                        <p>One-on-one service would be assured by exclusive specialist.</p>
+                    </div>
+                    <div class="p-r fl">
+                        <img src="img/r4.png" alt="">
+                        <h3>On-time delivery</h3>
+                        <p>According to your requirement, mecha will be on-time delivered to your designated
+                            address.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--buy end-->
+    <!--footer start-->
+    <footer>
+        <div class="content">
+            <div class="d-ib">
+                <h3>
+                    <a href="">Business Architecture</a>
+                </h3>
+                <div>
+                    <a href="">Mech-Cloud Smart Lab</a>
+                    <a href="">Mech-Chain SIOT Service Platform</a>
+                    <a href="">Innovative Mecha Transaction & Bran-New Retail Mode</a>
+                    <a href="">Financial Service</a>
+                    <a href="">Mech Pioneer Business</a>
+                </div>
+            </div>
+            <div class="d-ib">
+                <h3>
+                    <a href="">Mecha Purchasing</a>
+                </h3>
+                <div>
+                    <a href="">Release equipment</a>
+                    <a href="">Process For Mecha Purchasing</a>
+                    <a href="">Assurance For Mecha Purchasing</a>
+                </div>
+            </div>
+            <div class="d-ib">
+                <a href="">
+                    <img src="img/logo2.png" alt="">
+                </a>
+            </div>
+            <div class="d-ib">
+                <h3>
+                    <a href="">Mecha Selling</a>
+                </h3>
+                <div>
+                    <a href="">Release equipment</a>
+                    <a href="">Process For Mecha Selling</a>
+                    <a href="">Assurance For Mecha Selling</a>
+                </div>
+            </div>
+            <div class="d-ib">
+                <h3>
+                    <a href="">Maker Recruitment</a>
+                </h3>
+                <div>
+                    <a href="">Profitable way</a>
+                    <a href="">Platform for maker</a>
+                    <a href="">Welcome to join us</a>
+                    <a href="">How to be a maker</a>
+                </div>
+            </div>
+        </div>
+</div>
+</footer>
+<!--footer end-->
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/hdNav.js"></script>
+<script>
+    /*var close = $(".construction .class .right .close");
+    close.click(function () {
+        $(".construction .class .right").hide();
+    });*/
+
+
+    var message = new Vue({
+        el: '#message',
+        data: {
+            banner: {},
+            baseUrl: urlPre
+        },
+        created: function () {
+            var that = this;
+            //获取banner图
+            $.get("../banner/getByType",
+                {
+                    type: 4
+                },
+                function (res) {
+                    if (res.code == 0) {
+                        that.banner = res.data[0];
+                    } else {
+                        //错误提示
+                        alert(res.msg);
+                    }
+                });
+
+        },
+        methods: {
+            submit: function () {
+                var contact = $("#contact").val();
+                if (contact == "") {
+                    alert('请输入您的联系方式');
+                    return;
+                }
+                $.post("../buying/submit", {
+                        contact: contact
+                    },
+                    function (res) {
+                        if (res.code == 0) {
+                            alert("提交成功，稍后会有工作人员联系您");
+                            $("#contact").val("");
+                        } else {
+                            alert(res.data);
+                        }
+                    }, "json");
+            }
+        }
+    })
+</script>
+</body>
+</html>
