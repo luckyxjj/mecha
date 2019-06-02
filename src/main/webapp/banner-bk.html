@@ -75,7 +75,7 @@
                                data-toggle="table"
                                data-toolbar="#toolbar"
                                data-page-size="10"
-                               data-page-list="[5,10,15,20]"
+                               data-page-list="[10,20,30]"
                                data-pagination="true"
                                data-side-pagination="server"
                                data-toolbar-align="right"
@@ -91,7 +91,8 @@
                                 <th data-field="urlEn" data-formatter="formatImg" class="col-lg-1 col-md-1 col-xs-1">英文图片</th>
                                 <th data-field="type" data-formatter="fmtBanner" class="col-lg-1 col-md-1 col-xs-1">类型</th>
                                 <th data-field="deleteFlag" data-formatter="fmtusing" class="col-lg-1 col-md-1 col-xs-1">状态</th>
-                                <th data-field="createTime" class="col-lg-1 col-md-1 col-xs-1">创建时间</th>
+                                <th data-field="createTime"  data-formatter="timeFormatter" class="col-lg-1 col-md-1 col-xs-1">创建时间</th>
+                                <th data-field="updateTime"  data-formatter="timeFormatter" class="col-lg-1 col-md-1 col-xs-1">创建时间</th>
                                 <th data-formatter="managerOption" class="col-lg-1 col-md-1 col-xs-1">操作</th>
                             </tr>
                             </thead>
@@ -246,7 +247,7 @@
                                                             </select>
                                                         </div>
                                                         <div><span>状态：</span>
-                                                            <select id="isUsing" name='deleteFlag' class='form-control'>
+                                                            <select id="deleteFlag" name='deleteFlag' class='form-control'>
                                                                 <option value='0'>关闭</option>
                                                                 <option value='1'>启用</option>
                                                             </select>
@@ -298,7 +299,7 @@
         $("#id").val(list.id);
         $("#name").val(list.name);
         $("#runUrl").val(list.runUrl);
-        $("#isUsing").val(list.deleteFlag);
+        $("#deleteFlag").val(list.deleteFlag);
         $("#type").val(list.type);
     };
 

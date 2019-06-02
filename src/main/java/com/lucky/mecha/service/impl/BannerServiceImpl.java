@@ -6,6 +6,7 @@ import com.lucky.mecha.dao.AboutRepository;
 import com.lucky.mecha.dao.BannerRepository;
 import com.lucky.mecha.entity.About;
 import com.lucky.mecha.entity.Banner;
+import com.lucky.mecha.entity.Buying;
 import com.lucky.mecha.exception.MechaException;
 import com.lucky.mecha.service.AboutService;
 import com.lucky.mecha.service.BannerService;
@@ -15,6 +16,8 @@ import com.lucky.mecha.vo.response.AboutResponse;
 import com.lucky.mecha.vo.response.BannerResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -54,15 +57,10 @@ public class BannerServiceImpl implements BannerService {
 
     @Override
     public Pager<Banner> findAllBk(Pager pager) {
-        List<Banner> banners = bannerRepository.findAll();
-        if (banners.size()>0){
-            PageInfo<Banner> info = new PageInfo<>(banners);
-            pager.setRows(info.getList());
-            pager.setTotal((int)info.getTotal());
-        }else {
-            pager.setRows(banners);
-            pager.setTotal(0);
-        }
+        PageRequest pageRequest = PageRequest.of(pager.getOffset()/pager.getLimit(), pager.getLimit());
+        Page<Banner> buyingPage = bannerRepository.findAll(pageRequest);
+        pager.setRows(buyingPage.getContent());
+        pager.setTotal((int)buyingPage.getTotalElements());
         return pager;
     }
 

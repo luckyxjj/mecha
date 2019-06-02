@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import java.util.Date;
 
 /**
  * User: lucky
@@ -17,4 +18,8 @@ public class BaseEntity {
     @Basic
     @Column(name = "flag",nullable = false)
     private String flag;
+
+
+
+
 }

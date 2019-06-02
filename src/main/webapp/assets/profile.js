@@ -52,6 +52,14 @@ function fmtpower(value) {
     }
 }
 
+function sexFormatter(value) {
+    if (value == 0) {
+        return "男";
+    } else if (value == 1) {
+        return "女";
+    }
+}
+
 function fmtBanner(value) {
     if (value == 1) {
         return "首页";
@@ -74,7 +82,25 @@ function fmtBanner(value) {
     }
 }
 
+function timestampToTime(timestamp) {
+    var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+    var D = (date.getDate() < 10 ? '0'+date.getDate():date.getDate())+ ' ';
+    var h = (date.getHours()< 10 ? '0'+date.getHours():date.getHours()) + ':';
+    var m = date.getMinutes()< 10 ? '0'+date.getMinutes():date.getMinutes();
+    return Y+M+D+h+m;
+}
+
 var baseUrl = 'http://localhost:8080/';
+
+function timeFormatter(value) {
+    var dateStr = null;
+    if (value!=null){
+        dateStr = timestampToTime(value/1000);
+    }
+    return dateStr;
+}
 
 //转换成图片形式显示
 function formatImg(value, row, index) {

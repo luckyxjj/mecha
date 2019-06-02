@@ -65,7 +65,7 @@
             <form action="#" class="container" id="condition" style="text-align: center">
                 <div class="row">
                     <label>搜索条件：</label>
-                    <input maxlength="50" name="condition" placeholder="可输入手机号、微信号、邮箱号查询" style="width: 260px;"/>
+                    <input maxlength="50" name="condition" placeholder="输入联系方式查询" style="width: 260px;"/>
                     <a id="searchBtn" href="" data-action="reload" style="font-size: 18px;margin-left: 10px" title="查询">
                         <i class="glyphicon glyphicon-search"></i>
                     </a>
@@ -88,7 +88,7 @@
                                data-toggle="table"
                                data-toolbar="#toolbar"
                                data-page-size="10"
-                               data-page-list="[5,10,15,20]"
+                               data-page-list="[10,20,30]"
                                data-pagination="true"
                                data-side-pagination="server"
                                data-toolbar-align="right"
@@ -98,8 +98,10 @@
                             <thead>
                             <tr>
                                 <th class="yinchang" data-field="id" class="col-lg-1 col-md-1 col-xs-1">ID</th>
-                                <th data-field="contact" class="col-lg-1 col-md-1 col-xs-1">联系方式</th>
-<!--                                <th data-formatter="managerOption" class="col-lg-1 col-md-1 col-xs-1">操作</th>-->
+                                <th data-field="contact" class="col-lg-4 col-md-4 col-xs-4">联系方式</th>
+                                <th data-field="flag" class="col-lg-2 col-md-2 col-xs-2">备注</th>
+                                <th data-field="createTime" data-formatter="timeFormatter" class="col-lg-1 col-md-1 col-xs-1">提交时间</th>
+                                <th data-formatter="managerOption" class="col-lg-1 col-md-1 col-xs-1">操作</th>
                             </tr>
                             </thead>
                         </table>
@@ -126,20 +128,9 @@
                                                         <input id="id" name="id" readonly="readonly"
                                                                class="form-control limited col-xs-10 col-sm-5"/>
                                                     </div>
-                                                    <div><span>姓名：</span>
-                                                        <input id="name" name="name"
+                                                    <div><span>备注：</span>
+                                                        <input id="flag" name="flag"
                                                                class="form-control limited col-xs-10 col-sm-5"/>
-                                                    </div>
-                                                    <div><span>手机号：</span>
-                                                        <input id="mobile" name="mobile"
-                                                               onkeyup="value=value.replace(/[^\d.]/g,'')"
-                                                               class="form-control limited col-xs-10 col-sm-5"/>
-                                                    </div>
-                                                    <div><span>是否可扫码核销：</span>
-                                                        <select id="levelId" name='levelId' class='form-control'>
-                                                            <option value='0'>否</option>
-                                                            <option value='1'>是</option>
-                                                        </select>
                                                     </div>
                                                 </div>
                                             </form>
@@ -175,7 +166,8 @@
         $(".page-number.active a").attr({
             href: "javascript:void(0)"
         });
-        return '<a class="glyphicon glyphicon-edit proEdit" href="javascript:void(0) " onclick="showUpdate(this)" title="修改" />';
+        return '<a class="glyphicon glyphicon-edit proEdit" href="javascript:void(0) " onclick="showUpdate(this)" title="修改" />&nbsp;&nbsp;' +
+            '<a class="glyphicon glyphicon-trash" href="javascript:void(0)" title="删除" onclick="del(this)" />';
     }
 
     function showUpdate(t){
@@ -184,9 +176,7 @@
         var list = $("#table").bootstrapTable('getData')[index];
         $('#modal-table-update').modal('show')
         $("#id").val(list.id);
-        $("#name").val(list.name);
-        $("#mobile").val(list.mobile);
-        $("#levelId").val(list.levelId);
+        $("#flag").val(list.flag);
     };
 
     //修改提交
@@ -195,7 +185,7 @@
         // 同步数据后可以直接取得textarea的value
         $("#form_edit").ajaxSubmit({
             type: 'post',
-            url: 'userBK/update',
+            url: 'buyingBk/update',
             data: data,
             success: function (res) {
                 if (res.code == 0) {
@@ -228,6 +218,29 @@
         $("#table").bootstrapTable('refresh', opt);
         $('#table').bootstrapTable('refreshOptions',{pageNumber:1,pageSize:10});
     })
+
+    //删除
+    function del(t) {
+        var r = confirm("是否确定删除");
+        if (!r) {
+            return;
+        }
+        var delid = $(t).parents("tr").find("td:eq(0)").html()
+        $.ajax({
+            "type": "POST",
+            "data": "id=" + delid,
+            "url": "buyingBk/delete",
+            "async": false,
+            "success": function (res) {
+                if (res.code == 0) {
+                    alert("删除成功")
+                    $("#table").bootstrapTable("refresh");
+                } else {
+                    alert(res.msg);
+                }
+            }
+        });
+    }
 
 </script>
 </body>

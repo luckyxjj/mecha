@@ -7,6 +7,7 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * User: lucky
@@ -22,7 +23,7 @@ import javax.persistence.*;
 @Table(name = "banner")
 @DynamicInsert(true)
 @DynamicUpdate(true)
-public class Banner extends BaseEntity{
+public class Banner{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -52,4 +53,12 @@ public class Banner extends BaseEntity{
     @Basic
     @Column(name = "delete_flag",nullable = false)
     private Integer deleteFlag;
+
+    @Basic
+    @Column(name = "create_time",nullable = true)
+    private Date createTime;
+
+    @Basic
+    @Column(name = "update_time",nullable = true)
+    private Date updateTime;
 }

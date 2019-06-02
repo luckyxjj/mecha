@@ -2,8 +2,10 @@ package com.lucky.mecha.controller.admin;
 
 import com.lucky.mecha.Constant.Constants;
 import com.lucky.mecha.entity.Admin;
+import com.lucky.mecha.entity.Category;
 import com.lucky.mecha.exception.MechaException;
 import com.lucky.mecha.service.AdminService;
+import com.lucky.mecha.vo.Pager;
 import com.lucky.mecha.vo.request.AdminRequest;
 import com.lucky.mecha.vo.response.AdminResponse;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -64,5 +66,25 @@ public class AdminControllerBk {
             throw new MechaException(Constants.ErrorMsg.NOT_LOGIN);
         }
         return new AdminResponse();
+    }
+
+    @GetMapping("/getAll")
+    public Pager<Admin> getAll(Pager pager) {
+        return adminService.findAllBk(pager);
+    }
+
+    @PostMapping("/add")
+    public Admin add(Admin request) throws MechaException{
+        return adminService.add(request);
+    }
+
+    @PostMapping("/update")
+    public Admin update(Admin request) throws MechaException{
+        return adminService.update(request);
+    }
+
+    @PostMapping("/delete")
+    public String delete(Long id) {
+        return adminService.delete(id);
     }
 }

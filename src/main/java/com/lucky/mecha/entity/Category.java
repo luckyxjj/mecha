@@ -3,8 +3,11 @@ package com.lucky.mecha.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * User: lucky
@@ -12,12 +15,14 @@ import javax.persistence.*;
  * Time: 21:32
  * Description: 分类
  */
+@DynamicInsert
+@DynamicUpdate
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "category")
-public class Category extends BaseEntity{
+public class Category{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,10 +30,22 @@ public class Category extends BaseEntity{
     private Long id;
 
     @Basic
-    @Column(name = "name",nullable = false)
-    private String name;
+    @Column(name = "name_cn",nullable = false)
+    private String nameCn;
+
+    @Basic
+    @Column(name = "name_en",nullable = false)
+    private String nameEn;
 
     @Basic
     @Column(name = "delete_flag",nullable = false)
     private Integer deleteFlag;
+
+    @Basic
+    @Column(name = "create_time",nullable = true)
+    private Date createTime;
+
+    @Basic
+    @Column(name = "update_time",nullable = true)
+    private Date updateTime;
 }

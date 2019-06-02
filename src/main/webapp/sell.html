@@ -95,13 +95,13 @@
                     <div class="up">
                         <div class="d-ib">选择分类</div>
                         <select name="categoryName" id="categoryName">
-                            <option v-for="category in categoryList" :value="category.name">{{category.name}}</option>
+                            <option v-for="category in categoryList" :value="category.nameCn">{{category.nameCn}}</option>
                         </select>
                     </div>
                     <div class="up">
                         <div class="d-ib">选择品牌</div>
                         <select name="brandName" id="brandName">
-                            <option :value="brand.name" v-for="brand in brandList">{{brand.name}}</option>
+                            <option :value="brand.nameCn" v-for="brand in brandList">{{brand.nameCn}}</option>
                         </select>
                     </div>
 
@@ -140,7 +140,7 @@
                         <div class="d-ib">车辆照片</div>
                         <input type="file" multiple name="file" id="imgUrl" onchange="imgChange(this)">
                         <div class="upImg" id="upImg">
-                            <img src="img/e.png" alt="" id="showImg">
+<!--                            <img src="img/e.png" alt="" id="showImg">-->
                             <p>请上传jpg、png格式照片，最少5张最多20张</p>
                         </div>
                     </div>

@@ -34,7 +34,7 @@ public class IssueController {
     public IssueResponse submit(IssueRequest request, MultipartFile[] file, HttpServletRequest servletRequest) throws MechaException {
         log.info("issue/submit -> {}",JSON.toJSONString(request));
         request.setSex(request.getSex()==null?0:request.getSex());
-        if (!request.validate()){
+        if (!request.createValidate()){
             throw new MechaException(Constants.ErrorMsg.ISSUE_PARA_ERROR);
         }
 

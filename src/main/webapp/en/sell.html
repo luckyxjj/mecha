@@ -89,13 +89,13 @@
                         <div class="up">
                             <div class="d-ib">Select category</div>
                             <select name="categoryName" id="categoryName">
-                                <option v-for="category in categoryList" :value="category.name">{{category.name}}</option>
+                                <option v-for="category in categoryList" :value="category.nameEn">{{category.nameEn}}</option>
                             </select>
                         </div>
                         <div class="up">
                             <div class="d-ib">Select brand</div>
                             <select name="brandName" id="brandName">
-                                <option :value="brand.name" v-for="brand in brandList">{{brand.name}}</option>
+                                <option :value="brand.nameEn" v-for="brand in brandList">{{brand.nameEn}}</option>
                             </select>
                         </div>
                         <div class="up">
@@ -132,7 +132,7 @@
                             <div class="d-ib">Photo</div>
                             <input type="file" multiple name="file" id="imgUrl" onchange="imgChange(this)">
                             <div class="upImg" id="upImg">
-                                <img src="img/e.png" alt="" id="showImg">
+<!--                                <img src="img/e.png" alt="" id="showImg">-->
                                 <p>Photo upload (with jpg, png format, min. 5 and max. 50 photos)</p>
                             </div>
 

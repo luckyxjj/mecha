@@ -35,7 +35,7 @@ public class IssueRequest {
     private String wechat;
     private String usingExperience;
 
-    public boolean validate() {
+    public boolean createValidate() {
         return !StringUtils.isEmpty(categoryName)
                 && !StringUtils.isEmpty(brandName)
                 && !StringUtils.isEmpty(unitType)
@@ -52,4 +52,5 @@ public class IssueRequest {
                 && !StringUtils.isEmpty(wechat)
                 && !StringUtils.isEmpty(usingExperience);
     }
+
 }

@@ -1,9 +1,9 @@
 package com.lucky.mecha.dao;
 
 import com.lucky.mecha.entity.Issue;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
 
 /**
  * User: lucky
@@ -12,5 +12,6 @@ import java.util.List;
  * Description:
  */
 public interface IssueRepository extends JpaRepository<Issue, Long>{
-    List<Issue> findByLinkmanLikeOrPhoneLike(String condition,String condition2);
+    Page<Issue> findByDeleteFlagAndLinkmanLikeOrPhoneLike(Integer deleteFlag,String condition, String condition2, Pageable pageable);
+    Page<Issue> findAllByDeleteFlag(Integer deleteFlag,Pageable pageable);
 }

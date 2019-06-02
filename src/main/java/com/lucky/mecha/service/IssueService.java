@@ -10,4 +10,8 @@ public interface IssueService {
     IssueResponse submit(IssueRequest request) throws MechaException;
 
     Pager<Issue> findAllBk(Pager pager);
+
+    String delete(Long id) throws MechaException;
+
+    IssueResponse update(Issue request) throws MechaException;
 }

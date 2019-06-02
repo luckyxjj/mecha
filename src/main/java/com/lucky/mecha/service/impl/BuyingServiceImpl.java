@@ -1,20 +1,20 @@
 package com.lucky.mecha.service.impl;
 
-import com.github.pagehelper.PageInfo;
 import com.lucky.mecha.Constant.Constants;
 import com.lucky.mecha.dao.BuyingRepository;
 import com.lucky.mecha.entity.Buying;
-import com.lucky.mecha.entity.Counseling;
 import com.lucky.mecha.exception.MechaException;
 import com.lucky.mecha.service.BuyingService;
 import com.lucky.mecha.vo.Pager;
 import com.lucky.mecha.vo.request.BuyingRequest;
 import com.lucky.mecha.vo.response.BuyingResponse;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 /**
  * User: lucky
@@ -43,20 +43,43 @@ public class BuyingServiceImpl implements BuyingService {
 
     @Override
     public Pager<Buying> findAllBk(Pager pager) {
-        List<Buying> buyings = new ArrayList<>();
+        Sort sort = Sort.by(Sort.Direction.DESC,"id");
+        PageRequest pageRequest = PageRequest.of(pager.getOffset()/pager.getLimit(), pager.getLimit(),sort);
+        Page<Buying> buyingPage = null;
         if (!StringUtils.isEmpty(pager.getCondition())){
-            buyings = buyingRepository.findByContactLike(pager.getCondition()+"%");
+            buyingPage = buyingRepository.findByDeleteFlagAndContactLike(1,pager.getCondition()+"%",pageRequest);
         }else {
-            buyings = buyingRepository.findAll();
+            buyingPage = buyingRepository.findAllByDeleteFlag(1,pageRequest);
         }
-        if (buyings.size()>0){
-            PageInfo<Buying> info = new PageInfo<>(buyings);
-            pager.setRows(info.getList());
-            pager.setTotal((int)info.getTotal());
-        }else {
-            pager.setRows(buyings);
-            pager.setTotal(0);
-        }
+        pager.setRows(buyingPage.getContent());
+        pager.setTotal((int)buyingPage.getTotalElements());
         return pager;
+    }
+
+    @Override
+    public String delete(Long id) throws MechaException{
+        Optional<Buying> buyingOptional = buyingRepository.findById(id);
+        if (!buyingOptional.isPresent()){
+            throw new MechaException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
+        }
+        Buying buying = buyingOptional.get();
+        buying.setDeleteFlag(0);
+        buyingRepository.save(buying);
+        return "ok";
+    }
+
+    @Override
+    public BuyingResponse update(Buying request) throws MechaException {
+        if (null==request.getId()){
+            throw new MechaException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
+        }
+        Optional<Buying> buyingOptional = buyingRepository.findById(request.getId());
+        if (!buyingOptional.isPresent()){
+            throw new MechaException(Constants.ErrorMsg.REQUEST_PARAM_ERROR);
+        }
+        Buying buying = buyingOptional.get();
+        buying.setFlag(request.getFlag());
+        buyingRepository.save(buying);
+        return new BuyingResponse();
     }
 }

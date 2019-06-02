@@ -3,6 +3,8 @@ package com.lucky.mecha.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -14,12 +16,14 @@ import java.util.Date;
  * Time: 21:32
  * Description: 机甲设备发布
  */
+@DynamicInsert
+@DynamicUpdate
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "issue")
-public class Issue extends BaseEntity{
+public class Issue {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -94,5 +98,19 @@ public class Issue extends BaseEntity{
     @Column(name = "status",nullable = false)
     private Integer status;
 
+    @Basic
+    @Column(name = "delete_flag",nullable = false)
+    private Integer deleteFlag;
 
+    @Basic
+    @Column(name = "flag",nullable = false)
+    private String flag;
+
+    @Basic
+    @Column(name = "create_time",nullable = true)
+    private Date createTime;
+
+    @Basic
+    @Column(name = "update_time",nullable = true)
+    private Date updateTime;
 }

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
  * User: lucky
@@ -17,7 +18,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "about")
-public class About extends BaseEntity{
+public class About {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,4 +36,12 @@ public class About extends BaseEntity{
     @Basic
     @Column(name = "delete_flag",nullable = false)
     private Integer deleteFlag;
+
+    @Basic
+    @Column(name = "create_time",nullable = true)
+    private Date createTime;
+
+    @Basic
+    @Column(name = "update_time",nullable = true)
+    private Date updateTime;
 }

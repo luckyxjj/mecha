@@ -3,6 +3,8 @@ package com.lucky.mecha.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,12 +15,14 @@ import java.util.Date;
  * Time: 21:32
  * Description: 关于我们
  */
+@DynamicInsert
+@DynamicUpdate
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "admin")
-public class Admin extends BaseEntity{
+public class Admin{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -44,5 +48,17 @@ public class Admin extends BaseEntity{
     @Basic
     @Column(name = "type",nullable = false)
     private Integer type;
+
+    @Basic
+    @Column(name = "delete_flag",nullable = false)
+    private Integer deleteFlag;
+
+    @Basic
+    @Column(name = "create_time",nullable = true)
+    private Date createTime;
+
+    @Basic
+    @Column(name = "update_time",nullable = true)
+    private Date updateTime;
 
 }

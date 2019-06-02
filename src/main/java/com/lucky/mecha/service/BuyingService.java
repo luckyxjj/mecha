@@ -10,4 +10,8 @@ public interface BuyingService {
     BuyingResponse submit(BuyingRequest request) throws MechaException;
 
     Pager<Buying> findAllBk(Pager pager);
+
+    String delete(Long id) throws MechaException;
+
+    BuyingResponse update(Buying request) throws MechaException;
 }

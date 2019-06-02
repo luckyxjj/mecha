@@ -10,5 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * Description:
  */
 public interface AdminRepository extends JpaRepository<Admin, Long> {
-    Admin findByUsernameAndPassword(String username,String password);
+    Admin findByUsernameAndPasswordAndDeleteFlag(String username,String password,Integer deleteFlag);
+    Admin findByUsername(String username);
 }

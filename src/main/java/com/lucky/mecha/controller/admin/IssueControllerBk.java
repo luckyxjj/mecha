@@ -40,4 +40,14 @@ public class IssueControllerBk {
     public Pager<Issue> getAll(Pager pager) {
         return issueService.findAllBk(pager);
     }
+
+    @PostMapping("/delete")
+    public String delete(Long id) throws MechaException {
+        return issueService.delete(id);
+    }
+
+    @PostMapping("/update")
+    public IssueResponse update(Issue request) throws MechaException {
+        return issueService.update(request);
+    }
 }
