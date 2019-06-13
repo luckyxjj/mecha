@@ -1093,6 +1093,9 @@
 .hide {
     display: none;
 }
+.content-dev{
+    width: 100%;
+}
 
 
 
