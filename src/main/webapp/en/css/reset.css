@@ -113,3 +113,8 @@ input,textarea,button,select{
     margin: auto;
 }
 
+.hp-div img{
+    width: auto;
+    display: inline;
+}
+

@@ -20,4 +20,5 @@ if ($(window).width() < 1000) {
     );
 }
 
-var urlPre = 'http://localhost:8080/';
+// var urlPre = 'http://localhost:8080/';
+var urlPre = 'http://jj.597ty.com/';

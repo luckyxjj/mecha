@@ -111,4 +111,7 @@ input,textarea,button,select{
     width: 1200px;
     margin: auto;
 }
-
+.hp-div img{
+    width: auto;
+    display: inline;
+}

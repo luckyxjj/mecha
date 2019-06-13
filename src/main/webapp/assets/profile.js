@@ -92,7 +92,7 @@ function timestampToTime(timestamp) {
     return Y+M+D+h+m;
 }
 
-var baseUrl = 'http://localhost:8080/';
+var baseUrl = 'http://jj.597ty.com/';
 
 function timeFormatter(value) {
     var dateStr = null;
