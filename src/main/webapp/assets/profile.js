@@ -92,7 +92,7 @@ function timestampToTime(timestamp) {
     return Y+M+D+h+m;
 }
 
-var baseUrl = 'http://jj.597ty.com/';
+var baseUrl = 'http://mech-chain.com/';
 
 function timeFormatter(value) {
     var dateStr = null;

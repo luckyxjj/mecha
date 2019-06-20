@@ -8,7 +8,7 @@ if ($(window).width() < 1000) {
         },
         function () {
             $(".sNav").stop().slideToggle();
-        },
+        }
     );
 
     $(".sNav").hover(function () {
@@ -16,9 +16,9 @@ if ($(window).width() < 1000) {
         },
         function () {
             $(this).stop().slideToggle();
-        },
+        }
     );
 }
 
 // var urlPre = 'http://localhost:8080/';
-var urlPre = 'http://jj.597ty.com/';
+var urlPre = 'http://mech-chain.com/';
