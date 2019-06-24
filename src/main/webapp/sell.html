@@ -44,7 +44,7 @@
                         <a href="buy.html">买机甲</a>
                     </div>
                     <div class="d-ib on">
-                        <a href="sell.html">卖机甲</a>
+                        <a href="sell.html" onmouseover="onOver()" onmouseout="onOut()">卖机甲</a>
                     </div>
                     <div class="d-ib">
                         <a href="sc.html">商城入口</a>
@@ -275,6 +275,14 @@
             $(this).addClass("on").siblings().removeClass("on")
         })
     });
+
+    function onOver() {
+        $('.sNav').css('display','block');
+    }
+
+    function onOut() {
+        $('.sNav').css('display','none');
+    }
 
     //选择图片
     function imgChange(t) {

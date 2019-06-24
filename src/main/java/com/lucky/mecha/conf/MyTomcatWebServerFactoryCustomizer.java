@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 public class MyTomcatWebServerFactoryCustomizer
         implements WebServerFactoryCustomizer<TomcatServletWebServerFactory> {
 
-    public static final int DEFAULT_MAX_PARAMETER_COUNT = 10000;
+    public static final int DEFAULT_MAX_PARAMETER_COUNT = 50000;
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
