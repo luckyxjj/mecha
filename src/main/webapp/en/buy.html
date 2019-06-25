@@ -17,7 +17,7 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
-<div id="message">
+<div id="wrap">
     <!--header start-->
     <header class="">
         <div class="content clearfix">
@@ -76,12 +76,12 @@
     </header>
     <!--header end-->
     <!--banner start-->
-    <div class="banner p-r">
+    <div class="banner p-r" id="bannerLevel">
         <img :src="baseUrl+banner.urlEn">
     </div>
     <!--banner end-->
     <!--buy start-->
-    <div class="buy">
+    <div class="buy" id="message">
         <form action="">
             <div class="callus">
                 <div>
@@ -312,24 +312,24 @@
     var message = new Vue({
         el: '#message',
         data: {
-            banner: {},
+            // banner: {},
             baseUrl: urlPre
         },
         created: function () {
             var that = this;
-            //获取banner图
-            $.get("../banner/getByType",
-                {
-                    type: 4
-                },
-                function (res) {
-                    if (res.code == 0) {
-                        that.banner = res.data[0];
-                    } else {
-                        //错误提示
-                        alert(res.msg);
-                    }
-                });
+            // //获取banner图
+            // $.get("../banner/getByType",
+            //     {
+            //         type: 4
+            //     },
+            //     function (res) {
+            //         if (res.code == 0) {
+            //             that.banner = res.data[0];
+            //         } else {
+            //             //错误提示
+            //             alert(res.msg);
+            //         }
+            //     });
 
         },
         methods: {
@@ -351,6 +351,37 @@
                         }
                     }, "json");
             }
+        }
+    })
+
+    var bannerLevel = new Vue({
+        el: '#bannerLevel',
+        data: {
+            data: {},
+            banner: {},
+            baseUrl: urlPre
+        },
+        created: function () {
+            var that = this;
+
+            //获取banner图
+            $.get("../banner/getByType",
+                {
+                    type: 4
+                },
+                function (res) {
+                    if (res.code == 0) {
+                        that.banner = res.data[0];
+                    } else {
+                        //错误提示
+                        alert(res.msg);
+                    }
+                });
+
+        },
+        methods: {
+
+
         }
     })
 </script>

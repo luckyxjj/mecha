@@ -16,7 +16,7 @@
     <script src="../js/vue.js"></script>
 </head>
 <body>
-    <div id="message">
+    <div id="wrap">
         <!--header start-->
         <header class="">
             <div class="content clearfix">
@@ -75,12 +75,12 @@
         </header>
         <!--header end-->
         <!--banner start-->
-        <div class="banner p-r">
+        <div class="banner p-r" id="bannerLevel">
             <img :src="baseUrl+banner.urlEn">
         </div>
         <!--banner end-->
         <!--about start-->
-        <div class="about">
+        <div class="about" id="message">
             <div class="content">
                 <div  v-html="data.content">
                     <!--                    {{data.content}}-->
@@ -346,12 +346,11 @@
             $(".construction .class .right").hide();
         });*/
 
-
         var message = new Vue({
             el: '#message',
             data: {
                 data: {},
-                banner: {},
+                // banner: {},
                 baseUrl: urlPre
             },
             created: function () {
@@ -370,20 +369,20 @@
                             //错误提示
                             alert(res.msg);
                         }
-                    }),
-                    //获取banner图
-                    $.get("../banner/getByType",
-                        {
-                            type: 2
-                        },
-                        function (res) {
-                            if (res.code == 0) {
-                                that.banner = res.data[0];
-                            } else {
-                                //错误提示
-                                alert(res.msg);
-                            }
-                        });
+                    })
+                    // //获取banner图
+                    // $.get("../banner/getByType",
+                    //     {
+                    //         type: 2
+                    //     },
+                    //     function (res) {
+                    //         if (res.code == 0) {
+                    //             that.banner = res.data[0];
+                    //         } else {
+                    //             //错误提示
+                    //             alert(res.msg);
+                    //         }
+                    //     });
 
             },
             methods: {
@@ -419,6 +418,37 @@
                     }
 
                 }
+
+            }
+        })
+
+        var bannerLevel = new Vue({
+            el: '#bannerLevel',
+            data: {
+                data: {},
+                banner: {},
+                baseUrl: urlPre
+            },
+            created: function () {
+                var that = this;
+
+                //获取banner图
+                $.get("../banner/getByType",
+                    {
+                        type: 2
+                    },
+                    function (res) {
+                        if (res.code == 0) {
+                            that.banner = res.data[0];
+                        } else {
+                            //错误提示
+                            alert(res.msg);
+                        }
+                    });
+
+            },
+            methods: {
+
 
             }
         })

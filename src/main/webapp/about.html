@@ -1,7 +1,8 @@
 <!doctype html><!--文档头信息——默认html文档-->
 <html lang="en"><!--根标签 en表英语 -->
 <head>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="UTF-8"><!-- 字符编码 -->
     <meta name="Generator" content="EditPlus®"><!-- 使用编辑器 不重要 可以不写 -->
     <meta name="Author" content="XX"><!-- 作者 可以不写-->
@@ -16,7 +17,8 @@
     <script src="js/vue.js"></script>
 </head>
 <body>
-    <div id="message">
+<!--<div id="message">-->
+    <div id="wrap">
         <!--header start-->
         <header class="">
             <div class="content clearfix">
@@ -75,15 +77,15 @@
         </header>
         <!--header end-->
         <!--banner start-->
-        <div class="banner p-r">
+        <div class="banner p-r" id="bannerLevel">
             <img :src="baseUrl+banner.urlCn">
         </div>
         <!--banner end-->
         <!--about start-->
-        <div class="about">
-            <div class="content" >
-                <div  v-html="data.content">
-<!--                    {{data.content}}-->
+        <div class="about" id="message">
+            <div class="content">
+                <div v-html="data.content">
+                    <!--                    {{data.content}}-->
                 </div>
                 <!--<div>
                     <h3 class="p-r">机甲链简介</h3>
@@ -147,7 +149,7 @@
                     <p>机甲链通过方以类聚、供应集中化和聚合需求的模式创新，提高二手机甲供给侧输出，加强其透明度和输出效率，可以更快速助力畅通从新车、二手车到报废车的流通渠道，盘活二手车存量，拉动新车消费增量，淘汰老旧车废量，链条式协调推进扩大建机、农机行业消费，进而促进供给侧与需求侧融通，助力国家供给侧结构性改革。同时，积极致力于将优质的中国品牌，通过平台走向世界，为推动中国品牌更好地得到国际认可做出更多贡献。</p>
                 </div>-->
                 <div>
-<!--                    <h3 class="p-r">合作品牌</h3>-->
+                    <!--                    <h3 class="p-r">合作品牌</h3>-->
                     <!--<div class="adList clearfix">
                         <div class="fl">
                             <a href="">
@@ -270,10 +272,10 @@
                             </a>
                         </div>
                     </div>-->
-<!--                    <img src="img/1.png" alt="">-->
-<!--                    <br>-->
-<!--                    <br>-->
-<!--                    <p class="tc">严选合作伙伴持续扩大中……</p>-->
+                    <!--                    <img src="img/1.png" alt="">-->
+                    <!--                    <br>-->
+                    <!--                    <br>-->
+                    <!--                    <p class="tc">严选合作伙伴持续扩大中……</p>-->
                 </div>
             </div>
         </div>
@@ -333,35 +335,100 @@
         </footer>
         <!--footer end-->
     </div>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/hdNav.js"></script>
-    <script>
-        $("header").addClass("other");
+<!--</div>-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/hdNav.js"></script>
+<script>
+    $("header").addClass("other");
 
-        var message = new Vue({
-            el: '#message',
-            data: {
-                data: {},
-                banner: {},
-                baseUrl: urlPre
-            },
-            created: function () {
-                var that = this;
-                var te = localStorage.getItem("dem_language")
-                that.language = (localStorage.getItem("dem_language")==null||localStorage.getItem("dem_language")==0)?0:1;
-                //获取关于我们
-                $.get("about/getLastOne",
-                    {
-                        type:'0'
-                    },
-                    function (res) {
-                        if (res.code == 0) {
-                            that.data = res.data;
-                        } else {
-                            //错误提示
-                            alert(res.msg);
-                        }
-                    }),
+    var message = new Vue({
+        el: '#message',
+        data: {
+            data: {},
+            // banner: {},
+            baseUrl: urlPre
+        },
+        created: function () {
+            var that = this;
+            var te = localStorage.getItem("dem_language")
+            that.language = (localStorage.getItem("dem_language") == null || localStorage.getItem("dem_language") == 0) ? 0 : 1;
+            //获取关于我们
+            $.get("about/getLastOne",
+                {
+                    type: '0'
+                },
+                function (res) {
+                    if (res.code == 0) {
+                        that.data = res.data;
+                    } else {
+                        //错误提示
+                        alert(res.msg);
+                    }
+                })
+                //获取banner图
+                // $.get("banner/getByType",
+                //     {
+                //         type: 2
+                //     },
+                //     function (res) {
+                //         if (res.code == 0) {
+                //             that.banner = res.data[0];
+                //         } else {
+                //             //错误提示
+                //             alert(res.msg);
+                //         }
+                //     });
+
+        },
+        methods: {
+            login: function () {
+                var that = this
+                var password = $("#password").val()
+                if (password == "") {
+                    $("#tip").show();
+                    $("#tip").text(that.language == 1 ? that.parameterInfo.us.passTip : that.parameterInfo.cn.passTip);
+                } else {
+                    $.post("user/login", {
+                            password: password
+                        },
+                        function (res) {
+                            if (res.code == 0) {
+                                /* 清除密码 */
+                                $("#password").val("");
+                                $("#tip").hide();
+                                sessionStorage.setItem("user", res.data);
+                                window.location.href = 'product-center-new.html'
+                            } else {
+                                $("#tip").show();
+                                if (res.msg == "密码错误" && that.language == 1) {//密码错误 英文
+                                    $("#tip").text(that.parameterInfo.us.passError);
+                                } else {
+                                    //密码错误 中文
+                                    $("#tip").text(that.parameterInfo.cn.passError);
+                                }
+
+                            }
+
+                        });
+                }
+
+            }
+
+        }
+    })
+
+    var bannerLevel = new Vue({
+        el: '#bannerLevel',
+        data: {
+            data: {},
+            banner: {},
+            baseUrl: urlPre
+        },
+        created: function () {
+            var that = this;
+            var te = localStorage.getItem("dem_language")
+            that.language = (localStorage.getItem("dem_language") == null || localStorage.getItem("dem_language") == 0) ? 0 : 1;
+
                 //获取banner图
                 $.get("banner/getByType",
                     {
@@ -376,43 +443,12 @@
                         }
                     });
 
-            },
-            methods: {
-                login: function () {
-                    var that = this
-                    var password = $("#password").val()
-                    if (password == "") {
-                        $("#tip").show();
-                        $("#tip").text(that.language==1?that.parameterInfo.us.passTip:that.parameterInfo.cn.passTip);
-                    } else {
-                        $.post("user/login", {
-                                password: password
-                            },
-                            function (res) {
-                                if (res.code == 0) {
-                                    /* 清除密码 */
-                                    $("#password").val("");
-                                    $("#tip").hide();
-                                    sessionStorage.setItem("user", res.data);
-                                    window.location.href = 'product-center-new.html'
-                                } else {
-                                    $("#tip").show();
-                                    if (res.msg=="密码错误"&&that.language==1){//密码错误 英文
-                                        $("#tip").text(that.parameterInfo.us.passError);
-                                    }else {
-                                        //密码错误 中文
-                                        $("#tip").text(that.parameterInfo.cn.passError);
-                                    }
+        },
+        methods: {
 
-                                }
 
-                            });
-                    }
-
-                }
-
-            }
-        })
-    </script>
+        }
+    })
+</script>
 </body>
 </html>

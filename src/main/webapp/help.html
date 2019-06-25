@@ -16,7 +16,7 @@
     <script src="js/vue.js"></script>
 </head>
 <body>
-    <div id="message">
+    <div id="wrap">
         <!--header start-->
         <header class="">
             <div class="content clearfix">
@@ -75,12 +75,12 @@
         </header>
         <!--header end-->
         <!--banner start-->
-        <div class="banner p-r">
+        <div class="banner p-r" id="bannerLevel">
             <img :src="baseUrl+banner.urlCn">
         </div>
         <!--banner end-->
         <!--help start-->
-        <div class="buy help">
+        <div class="buy help" id="message">
             <div class="construction">
                 <div class="content" >
                     <div class="contact hp-div">
@@ -194,7 +194,7 @@
             el: '#message',
             data: {
                 data: {},
-                banner: {},
+                // banner: {},
                 baseUrl: urlPre
             },
             created: function () {
@@ -214,19 +214,19 @@
                             alert(res.msg);
                         }
                     });
-                //获取banner图
-                $.get("banner/getByType",
-                    {
-                        type: 9
-                    },
-                    function (res) {
-                        if (res.code == 0) {
-                            that.banner = res.data[0];
-                        } else {
-                            //错误提示
-                            alert(res.msg);
-                        }
-                    });
+                // //获取banner图
+                // $.get("banner/getByType",
+                //     {
+                //         type: 9
+                //     },
+                //     function (res) {
+                //         if (res.code == 0) {
+                //             that.banner = res.data[0];
+                //         } else {
+                //             //错误提示
+                //             alert(res.msg);
+                //         }
+                //     });
 
 
             },
@@ -263,6 +263,39 @@
                     }
 
                 }
+
+            }
+        })
+
+        var bannerLevel = new Vue({
+            el: '#bannerLevel',
+            data: {
+                data: {},
+                banner: {},
+                baseUrl: urlPre
+            },
+            created: function () {
+                var that = this;
+                var te = localStorage.getItem("dem_language")
+                that.language = (localStorage.getItem("dem_language") == null || localStorage.getItem("dem_language") == 0) ? 0 : 1;
+
+                //获取banner图
+                $.get("banner/getByType",
+                    {
+                        type: 9
+                    },
+                    function (res) {
+                        if (res.code == 0) {
+                            that.banner = res.data[0];
+                        } else {
+                            //错误提示
+                            alert(res.msg);
+                        }
+                    });
+
+            },
+            methods: {
+
 
             }
         })
